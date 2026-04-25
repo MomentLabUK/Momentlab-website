@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Journal | Moment Lab</title>
+  <meta name="description" content="The Journal — stories from behind the booth, planning notes, and venues we love. Launching soon from Moment Lab in Newcastle and the North East.">
+
+  <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://momentlab.co.uk/blog.html">
+  <meta property="og:title" content="The Journal | Moment Lab">
+  <meta property="og:description" content="The Journal — stories from behind the booth, planning notes, and venues we love. Launching soon from Moment Lab in Newcastle and the North East.">
+  <meta property="og:image" content="https://momentlab.co.uk/og-image.jpg">
+  <meta property="og:site_name" content="Moment Lab">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://momentlab.co.uk/blog.html">
+  <meta name="twitter:title" content="The Journal | Moment Lab">
+  <meta name="twitter:description" content="The Journal — stories from behind the booth, planning notes, and venues we love. Launching soon from Moment Lab in Newcastle and the North East.">
+  <meta name="twitter:image" content="https://momentlab.co.uk/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/favicon-32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* ============================================================
+       The Journal (Blog) — page-specific styles
+       ============================================================ */
+
+    /* ── 1. HERO ──────────────────────────────────────────────── */
+    .journal-hero {
+      background: var(--obsidian);
+      position: relative;
+      overflow: hidden;
+      padding: 220px 8vw 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Atmospheric gilt radials */
+    .journal-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 110%, rgba(201,168,76,0.08) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 45% at 95% 20%, rgba(201,168,76,0.05) 0%, transparent 50%),
+        radial-gradient(ellipse 45% 40% at 5% 75%, rgba(201,168,76,0.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* Grain texture */
+    .journal-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+
+    .journal-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 60ch;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* "COMING SOON" — gilt text, no line */
+    .journal-coming-soon {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gilt);
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    .journal-hero h1.hero {
+      color: var(--bone);
+      margin-bottom: 40px;
+    }
+
+    .journal-hero p.lead {
+      color: var(--stone);
+      max-width: 44ch;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .journal-hero-desc {
+      margin-top: 56px;
+      max-width: 58ch;
+      text-align: center;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--stone);
+      font-weight: 300;
+    }
+
+    /* ── 2. WHAT TO EXPECT ────────────────────────────────────── */
+    .journal-what {
+      background: var(--bone);
+      padding: 140px 8vw;
+      text-align: center;
+    }
+
+    .journal-what-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .journal-section-eyebrow {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--stone);
+      display: block;
+      margin-bottom: 28px;
+    }
+
+    .journal-what h2.display {
+      color: var(--obsidian);
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .journal-what-intro {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--smoke);
+      max-width: 60ch;
+      margin: 0 auto;
+      font-weight: 300;
+      text-align: center;
+    }
+
+    /* Grid — two rows, each a flex row with hairline above */
+    .journal-grid {
+      margin-top: 80px;
+      text-align: left;
+    }
+
+    .journal-row {
+      display: flex;
+      gap: 48px;
+      align-items: flex-start;
+      padding-top: 56px;
+      border-top: 1px solid rgba(201, 168, 76, 0.2);
+    }
+
+    .journal-row + .journal-row {
+      margin-top: 80px;
+    }
+
+    .journal-grid-item {
+      flex: 1;
+    }
+
+    .journal-numeral {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(3rem, 4.5vw, 3.75rem);
+      line-height: 1;
+      color: var(--gilt);
+      letter-spacing: -0.02em;
+      display: block;
+      margin-bottom: 24px;
+    }
+
+    .journal-grid-item h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 1.2;
+      letter-spacing: -0.005em;
+      color: var(--obsidian);
+      margin-bottom: 12px;
+    }
+
+    .journal-grid-item p {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--stone);
+      max-width: 38ch;
+      margin-bottom: 0;
+    }
+
+    /* ── 3. CLOSING — SOCIAL ──────────────────────────────────── */
+    .journal-closing {
+      background: var(--obsidian);
+      padding: 140px 8vw;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .journal-closing::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,168,76,0.05) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 0% 100%, rgba(201,168,76,0.03) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .journal-closing-inner {
+      max-width: 58ch;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Re-use journal-section-eyebrow for dark surface — override color */
+    .journal-closing .journal-section-eyebrow {
+      color: var(--stone);
+    }
+
+    .journal-closing h2.display {
+      color: var(--bone);
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .journal-closing-desc {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--stone);
+      max-width: 54ch;
+      margin: 0 auto;
+      font-weight: 300;
+      text-align: center;
+    }
+
+    /* Social links row */
+    .journal-social-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 48px;
+    }
+
+    .journal-social-link {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gilt);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+      transition: color 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+                  border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Gilt dot prefix */
+    .journal-social-link::before {
+      content: '·\00a0';
+      color: var(--gilt);
+      transition: color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .journal-social-link:hover {
+      color: var(--gilt-soft);
+      border-bottom-color: var(--gilt-soft);
+    }
+
+    .journal-social-link:hover::before {
+      color: var(--gilt-soft);
+    }
+
+    .journal-social-link:focus-visible {
+      outline: 2px solid var(--gilt);
+      outline-offset: 4px;
+      border-radius: 1px;
+    }
+
+    .journal-social-link:active {
+      color: var(--gilt-deep);
+    }
+
+    /* "Get in touch →" cross-link */
+    .journal-contact-link {
+      display: inline-block;
+      margin-top: 80px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--gilt);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+      transition: color 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+                  border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .journal-contact-link:hover {
+      color: var(--gilt-soft);
+      border-bottom-color: var(--gilt-soft);
+    }
+
+    .journal-contact-link:focus-visible {
+      outline: 2px solid var(--gilt);
+      outline-offset: 4px;
+      border-radius: 1px;
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 767px) {
+      .journal-hero {
+        padding: 160px 6vw 64px;
+      }
+
+      .journal-hero p.lead {
+        max-width: 38ch;
+      }
+
+      .journal-what {
+        padding: 100px 6vw;
+      }
+
+      /* Stack rows — each item in single column */
+      .journal-row {
+        flex-direction: column;
+        gap: 64px;
+      }
+
+      .journal-row + .journal-row {
+        margin-top: 64px;
+      }
+
+      .journal-grid-item p {
+        max-width: 52ch;
+      }
+
+      .journal-closing {
+        padding: 100px 6vw;
+      }
+
+      .journal-social-links {
+        gap: 28px;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .journal-hero {
+        padding: 190px 6vw 80px;
+      }
+
+      .journal-what {
+        padding: 120px 6vw;
+      }
+
+      .journal-row {
+        gap: 40px;
+      }
+
+      .journal-closing {
+        padding: 120px 6vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="site-nav" role="banner">
+    <div class="nav-inner">
+
+      <a href="/" class="nav-logo" aria-label="Moment Lab — home">
+        <img src="brand_assets/moment-lab-primary.svg" alt="Moment Lab">
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li class="nav-dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">
+              Our Booths
+              <span class="chevron" aria-hidden="true"></span>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="/the-studio.html" role="menuitem">The Studio</a>
+              <a href="/the-looking-glass.html" role="menuitem">
+                The Looking Glass
+                <span class="nav-soon-badge">Coming Soon</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="/relive-the-moment.html">Relive the Moment</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/faqs.html">FAQs</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScvFBTFEnlQPlzwT0hrluWl1DMIgVdIR8G33Qqr-a1yc_fSsA/viewform?usp=sharing&ouid=112035764752614889026" class="btn-primary" target="_blank" rel="noopener noreferrer">Enquire Now</a>
+      </div>
+
+      <button
+        class="nav-hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+    <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile navigation">
+      <a href="/the-studio.html">The Studio</a>
+      <a href="/the-looking-glass.html">
+        The Looking Glass
+        <span class="soon">Coming Soon</span>
+      </a>
+      <a href="/relive-the-moment.html">Relive the Moment</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/faqs.html">FAQs</a>
+      <a href="/contact.html">Contact</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScvFBTFEnlQPlzwT0hrluWl1DMIgVdIR8G33Qqr-a1yc_fSsA/viewform?usp=sharing&ouid=112035764752614889026" class="btn-primary mobile-cta" target="_blank" rel="noopener noreferrer">Enquire Now</a>
+    </nav>
+  </header>
+
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- ── 1. HERO ─────────────────────────────────────────── -->
+    <section class="journal-hero" aria-label="Hero">
+      <div class="journal-hero-inner reveal">
+
+        <span class="journal-coming-soon" aria-label="Coming soon">Coming Soon</span>
+
+        <h1 class="hero">
+          The <em>Journal</em>.
+        </h1>
+
+        <p class="lead">
+          Stories from behind the booth.
+        </p>
+
+        <p class="journal-hero-desc">
+          A quieter corner of the site, where we'll share what we've learned from running booths
+          at some of the North East's most beautiful events — the questions couples always ask us,
+          the venues that leave us speechless, and the little details that turn a good night into
+          a memorable one.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ── 2. WHAT TO EXPECT ────────────────────────────────── -->
+    <section class="journal-what" aria-label="What to expect">
+      <div class="journal-what-inner">
+
+        <span class="journal-section-eyebrow">What to Expect</span>
+
+        <h2 class="display">What's landing <em>soon</em>.</h2>
+
+        <p class="journal-what-intro">
+          We're writing. Photographing. Visiting venues. Talking to couples.
+          When The Journal opens, here's what you can expect to find.
+        </p>
+
+        <div class="journal-grid" aria-label="Upcoming content categories">
+
+          <!-- Row 1: 01 + 02 -->
+          <div class="journal-row">
+
+            <div class="journal-grid-item">
+              <span class="journal-numeral" aria-hidden="true">01</span>
+              <h3>Real Events</h3>
+              <p>
+                Behind-the-scenes looks at the weddings, celebrations, and corporate nights
+                we've run — the moments the photos don't quite show, and the stories
+                that came before them.
+              </p>
+            </div>
+
+            <div class="journal-grid-item">
+              <span class="journal-numeral" aria-hidden="true">02</span>
+              <h3>Planning Notes</h3>
+              <p>
+                The practical questions we get asked most — timings, venues, logistics,
+                style — answered properly, in one place, without the fluff.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Row 2: 03 + 04 -->
+          <div class="journal-row">
+
+            <div class="journal-grid-item">
+              <span class="journal-numeral" aria-hidden="true">03</span>
+              <h3>Behind the Booth</h3>
+              <p>
+                How we build what we build. The thinking behind The Studio, what's coming
+                with The Looking Glass, and the small craft decisions that make a Moment Lab
+                booth feel like one.
+              </p>
+            </div>
+
+            <div class="journal-grid-item">
+              <span class="journal-numeral" aria-hidden="true">04</span>
+              <h3>Venues We Love</h3>
+              <p>
+                The North East is quietly full of remarkable spaces. We'll share the ones
+                that make our work better — with photos, notes, and honest thoughts from
+                the people who run them.
+              </p>
+            </div>
+
+          </div>
+
+        </div><!-- /journal-grid -->
+
+      </div>
+    </section>
+
+
+    <!-- ── 3. CLOSING — FOLLOW US ──────────────────────────── -->
+    <section class="journal-closing" aria-label="Follow us in the meantime">
+      <div class="journal-closing-inner">
+
+        <span class="journal-section-eyebrow">In the Meantime</span>
+
+        <h2 class="display">Where we're posting <em>live</em>.</h2>
+
+        <p class="journal-closing-desc">
+          Until The Journal opens properly, the best place to follow our work is on social.
+          Real events, real guests, real keepsakes — posted as they happen.
+        </p>
+
+        <div class="journal-social-links" role="list" aria-label="Social media links">
+          <a
+            href="https://instagram.com/momentlab.co"
+            class="journal-social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            role="listitem"
+            aria-label="Moment Lab on Instagram"
+          >Instagram</a>
+          <a
+            href="https://facebook.com/momentlab.co"
+            class="journal-social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            role="listitem"
+            aria-label="Moment Lab on Facebook"
+          >Facebook</a>
+          <a
+            href="https://tiktok.com/@momentlab.co"
+            class="journal-social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            role="listitem"
+            aria-label="Moment Lab on TikTok"
+          >TikTok</a>
+        </div>
+
+        <a href="/contact.html" class="journal-contact-link">
+          Have a question in the meantime? Get in touch &rarr;
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <img
+          src="brand_assets/moment-lab-primary.svg"
+          alt="Moment Lab"
+          class="footer-logo"
+        >
+        <p class="footer-tagline">Premium photobooth experiences across Newcastle &amp; the North East.</p>
+        <p class="footer-sub">Weddings · Corporate Events · Celebrations</p>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Explore</p>
+        <ul class="footer-links">
+          <li><a href="/the-studio.html">Our Booths</a></li>
+          <li><a href="/relive-the-moment.html">Relive the Moment</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/faqs.html">FAQs</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Get in Touch</p>
+        <div class="footer-contact-line">
+          <a href="mailto:hello@momentlab.co.uk">hello@momentlab.co.uk</a>
+          <a href="tel:+447345686762">+44 7345 686762</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://instagram.com/momentlab.co" target="_blank" rel="noopener noreferrer" aria-label="Moment Lab on Instagram">Instagram</a>
+          <a href="https://facebook.com/momentlab.co" target="_blank" rel="noopener noreferrer" aria-label="Moment Lab on Facebook">Facebook</a>
+          <a href="https://tiktok.com/@momentlab.co" target="_blank" rel="noopener noreferrer" aria-label="Moment Lab on TikTok">TikTok</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-legal">
+      <p class="footer-legal-copy">© Moment Lab 2026. All rights reserved.</p>
+      <ul class="footer-legal-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="/assets/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Studio — Open-Air Photobooth | Moment Lab</title>
+  <meta name="description" content="The Studio — our signature open-air photobooth. Professional DSLR, beauty-dish lighting, unlimited prints. Crafted for weddings and events in Newcastle.">
+
+  <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://momentlab.co.uk/the-studio.html">
+  <meta property="og:title" content="The Studio — Open-Air Photobooth | Moment Lab">
+  <meta property="og:description" content="The Studio — our signature open-air photobooth. Professional DSLR, beauty-dish lighting, unlimited prints. Crafted for weddings and events in Newcastle.">
+  <meta property="og:image" content="https://momentlab.co.uk/og-image.jpg">
+  <meta property="og:site_name" content="Moment Lab">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://momentlab.co.uk/the-studio.html">
+  <meta name="twitter:title" content="The Studio — Open-Air Photobooth | Moment Lab">
+  <meta name="twitter:description" content="The Studio — our signature open-air photobooth. Professional DSLR, beauty-dish lighting, unlimited prints. Crafted for weddings and events in Newcastle.">
+  <meta name="twitter:image" content="https://momentlab.co.uk/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/favicon-32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* ============================================================
+       The Studio — page-specific styles
+       ============================================================ */
+
+    /* ── 1. HERO ─────────────────────────────────────────────── */
+    .studio-hero {
+      background: var(--obsidian);
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .studio-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 55% 60% at 0% 100%, rgba(201,168,76,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 50% 0%, rgba(201,168,76,0.03) 0%, transparent 55%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .studio-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.02;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+      z-index: 2;
+    }
+
+    .studio-hero-text {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 200px 8% 100px 8vw;
+    }
+
+    .studio-hero-text h4.eyebrow {
+      color: var(--gilt);
+      margin-bottom: 32px;
+    }
+
+    .studio-hero-text h1.hero {
+      color: var(--bone);
+      margin-bottom: 24px;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+    }
+
+    .studio-hero-italic {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gilt);
+      letter-spacing: 0.01em;
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    .studio-hero-sub {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--stone);
+      max-width: 42ch;
+      margin-bottom: 56px;
+      letter-spacing: 0.04em;
+    }
+
+    .studio-hero-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .studio-hero-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .studio-hero-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--obsidian) 0%, transparent 30%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .studio-hero-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(201, 168, 76, 0.07);
+      mix-blend-mode: multiply;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* ── 2. INTRO ────────────────────────────────────────────── */
+    .studio-intro {
+      background: var(--bone);
+      padding: 120px 8vw 130px;
+    }
+
+    .studio-intro-inner {
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .studio-intro-heading h2.display {
+      color: var(--obsidian);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .studio-intro-heading h2.display em { color: var(--gilt); }
+
+    .studio-intro-body {
+      padding-top: 12px;
+    }
+
+    .studio-intro-body p {
+      font-size: 17px;
+      line-height: 1.75;
+      max-width: 56ch;
+      color: var(--obsidian);
+      margin-bottom: 24px;
+    }
+
+    .studio-intro-body p:last-child { margin-bottom: 0; }
+
+    /* ── 3. DESIGNED WITH EVERY DETAIL ──────────────────────── */
+    .studio-features {
+      background: var(--smoke);
+      padding: 120px 8vw 130px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .studio-features::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 65% 55% at 100% 0%, rgba(201,168,76,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 45% at 0% 100%, rgba(201,168,76,0.04) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .studio-features-header {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 72px;
+      max-width: 700px;
+    }
+
+    .studio-features-header h4.eyebrow { color: var(--gilt); }
+    .studio-features-header h2.display { color: var(--bone); margin-bottom: 0; }
+
+    /* ── FEATURE TILE GRID (01–04) ───────────────────────────── */
+    .feature-tiles {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 80px;
+    }
+
+    .feature-tile {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Image container — 4:5 portrait crop */
+    .tile-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      margin-bottom: 20px;
+    }
+
+    .tile-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* Per-tile zoom + focal point — each anchors to a distinct region of the source image */
+    /* Tile 1 — very top, orb/beauty dish close-up */
+    .tile-img-wrap img.tile-crop-top {
+      transform: scale(1.5);
+      transform-origin: 48% 6%;
+    }
+    /* Tile 2 — no zoom, full booth portrait (product shot overview) */
+    .tile-img-wrap img.tile-crop-upper {
+      transform: scale(1.0);
+      transform-origin: 50% 50%;
+    }
+    /* Tile 3 — very tight on right wooden pillar / side column */
+    .tile-img-wrap img.tile-crop-right {
+      transform: scale(2.0);
+      transform-origin: 72% 52%;
+    }
+    /* Tile 4 — base / speaker: very bottom */
+    .tile-img-wrap img.tile-crop-bottom {
+      transform: scale(1.55);
+      transform-origin: 48% 92%;
+    }
+
+    /* Hover: small push on each, focal point preserved */
+    .feature-tile:hover .tile-img-wrap img.tile-crop-top    { transform: scale(1.54); transform-origin: 48% 6%; }
+    .feature-tile:hover .tile-img-wrap img.tile-crop-upper  { transform: scale(1.04); transform-origin: 50% 50%; }
+    .feature-tile:hover .tile-img-wrap img.tile-crop-right  { transform: scale(2.04); transform-origin: 72% 52%; }
+    .feature-tile:hover .tile-img-wrap img.tile-crop-bottom { transform: scale(1.59); transform-origin: 48% 92%; }
+
+    /* Gilt color treatment layer on each tile image */
+    .tile-img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(201, 168, 76, 0.06);
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Eyebrow label */
+    .tile-eyebrow {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gilt-soft);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    /* Tile heading */
+    .tile-title {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+      line-height: 1.25;
+      color: var(--bone);
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+    }
+
+    /* Tile description */
+    .tile-desc {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--stone);
+      margin: 0;
+      max-width: 38ch;
+    }
+
+    /* ── PRINCIPLES GRID (05–07) ─────────────────────────────── */
+    .principles-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid rgba(201, 168, 76, 0.12);
+      padding-top: 80px;
+    }
+
+    .principle-item {
+      padding-right: 56px;
+    }
+
+    .principle-item:not(:first-child) {
+      padding-left: 56px;
+      padding-right: 0;
+      border-left: 1px solid rgba(201, 168, 76, 0.12);
+    }
+
+    .principle-num {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 26px;
+      line-height: 1;
+      color: var(--gilt);
+      letter-spacing: 0.04em;
+      margin-bottom: 24px;
+    }
+
+    .principle-num::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gilt);
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+
+    .principle-title {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bone);
+      margin: 0 0 14px;
+      line-height: 1.5;
+    }
+
+    .principle-desc {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--stone);
+      margin: 0;
+      max-width: 38ch;
+    }
+
+    /* ── 4. WHAT'S INCLUDED ──────────────────────────────────── */
+    .studio-included {
+      background: var(--paper);
+      padding: 120px 8vw 130px;
+    }
+
+    .studio-included-inner {
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .studio-included-heading h2.display {
+      color: var(--obsidian);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+    }
+
+    .studio-included-heading h2.display em { color: var(--gilt); }
+
+    .included-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 48px;
+      row-gap: 0;
+      padding-top: 8px;
+    }
+
+    .included-list li {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--obsidian);
+      letter-spacing: 0.03em;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(10, 10, 10, 0.1);
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      max-width: none;
+    }
+
+    .included-list li::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 1px;
+      background: var(--gilt);
+      flex-shrink: 0;
+      margin-top: 0.7em;
+    }
+
+    /* ── 5. THE SPECS ────────────────────────────────────────── */
+    .studio-specs {
+      background: var(--obsidian);
+      padding: 120px 8vw 130px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .studio-specs::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 50% 40% at 100% 50%, rgba(201,168,76,0.05) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 35% at 0% 0%, rgba(201,168,76,0.03) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .studio-specs-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .studio-specs-heading h4.eyebrow { color: var(--gilt); }
+
+    .studio-specs-heading h2.display {
+      color: var(--bone);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+    }
+
+    .studio-specs-heading h2.display em { color: var(--gilt); }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      padding-top: 8px;
+    }
+
+    .specs-table tr {
+      border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+    }
+
+    .specs-table tr:first-child {
+      border-top: 1px solid rgba(201, 168, 76, 0.12);
+    }
+
+    .specs-table td {
+      padding: 24px 0;
+      vertical-align: baseline;
+      max-width: none;
+    }
+
+    .spec-label {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gilt);
+      width: 40%;
+      padding-right: 32px;
+    }
+
+    .spec-value {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.65;
+      color: var(--stone);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── 6. TESTIMONIAL ──────────────────────────────────────── */
+    .studio-testimonial {
+      background: var(--paper);
+      padding: 120px 8vw;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .studio-testimonial::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 70% at 50% 100%, rgba(201,168,76,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .studio-testimonial-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .studio-t-mark {
+      display: block;
+      font-family: var(--serif);
+      font-size: 5rem;
+      line-height: 0.7;
+      color: var(--gilt);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
+
+    .studio-t-quote {
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2.8vw, 2rem);
+      line-height: 1.35;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--obsidian);
+      margin: 0 0 40px;
+      max-width: none;
+    }
+
+    .studio-t-rule {
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gilt);
+      margin: 0 auto 28px;
+    }
+
+    .studio-t-name {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--obsidian);
+      margin: 0 0 6px;
+      max-width: none;
+    }
+
+    .studio-t-event {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: var(--stone);
+      margin: 0;
+      max-width: none;
+    }
+
+    /* ── 7. CLOSING CTA ──────────────────────────────────────── */
+    .studio-cta {
+      background: var(--obsidian);
+      padding: 140px 8vw;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .studio-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 100%, rgba(201,168,76,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 50% 0%, rgba(201,168,76,0.03) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .studio-cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .studio-cta-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .studio-cta-eyebrow::before,
+    .studio-cta-eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--gilt);
+      flex-shrink: 0;
+    }
+
+    .studio-cta h2.display {
+      color: var(--bone);
+      margin-bottom: 24px;
+    }
+
+    .studio-cta-sub {
+      color: var(--stone);
+      font-size: 15px;
+      line-height: 1.75;
+      max-width: 48ch;
+      margin: 0 auto 48px;
+    }
+
+    .studio-cta-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .studio-cta-aside {
+      margin-top: 40px;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--stone);
+    }
+
+    .studio-cta-aside a {
+      color: var(--gilt);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .studio-cta-aside a:hover { border-bottom-color: var(--gilt); }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 1023px) {
+      .studio-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .studio-hero-text {
+        padding: 200px 6vw 64px;
+        justify-content: flex-end;
+      }
+
+      .studio-hero-image {
+        aspect-ratio: 4 / 3;
+        order: -1;
+        position: relative;
+      }
+
+      .studio-hero-image img {
+        position: absolute;
+      }
+
+      .studio-hero-image::before {
+        background: linear-gradient(to bottom, transparent 50%, var(--obsidian) 100%);
+      }
+
+      .studio-intro-inner,
+      .studio-included-inner,
+      .studio-specs-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      /* Tiles stay 2×2 on tablet */
+      .feature-tiles {
+        gap: 20px;
+        margin-bottom: 56px;
+      }
+
+      .principles-grid {
+        grid-template-columns: 1fr;
+        padding-top: 48px;
+        gap: 40px;
+      }
+
+      .principle-item,
+      .principle-item:not(:first-child) {
+        padding: 0;
+        border-left: none;
+        border-top: 1px solid rgba(201, 168, 76, 0.12);
+        padding-top: 40px;
+      }
+
+      .principle-item:first-child {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .included-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 639px) {
+      .studio-intro      { padding: 80px 6vw 90px; }
+      .studio-features   { padding: 80px 6vw 90px; }
+      .studio-included   { padding: 80px 6vw 90px; }
+      .studio-specs      { padding: 80px 6vw 90px; }
+      .studio-testimonial { padding: 80px 6vw; }
+      .studio-cta        { padding: 100px 6vw; }
+
+      .studio-features-header { margin-bottom: 48px; }
+
+      /* Single column on mobile */
+      .feature-tiles {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 48px;
+      }
+
+      .tile-img-wrap {
+        aspect-ratio: 3 / 2;
+      }
+
+      .tile-desc { max-width: none; }
+
+      .studio-cta-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="site-nav" role="banner">
+    <div class="nav-inner">
+
+      <a href="/" class="nav-logo" aria-label="Moment Lab — home">
+        <img src="brand_assets/moment-lab-primary.svg" alt="Moment Lab">
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li class="nav-dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">
+              Our Booths
+              <span class="chevron" aria-hidden="true"></span>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="/the-studio.html" role="menuitem">The Studio</a>
+              <a href="/the-looking-glass.html" role="menuitem">
+                The Looking Glass
+                <span class="nav-soon-badge">Coming Soon</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="/relive-the-moment.html">Relive the Moment</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/faqs.html">FAQs</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScvFBTFEnlQPlzwT0hrluWl1DMIgVdIR8G33Qqr-a1yc_fSsA/viewform?usp=sharing&ouid=112035764752614889026" class="btn-primary" target="_blank" rel="noopener noreferrer">Enquire Now</a>
+      </div>
+
+      <button
+        class="nav-hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+    <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile navigation">
+      <a href="/the-studio.html">The Studio</a>
+      <a href="/the-looking-glass.html">
+        The Looking Glass
+        <span class="soon">Coming Soon</span>
+      </a>
+      <a href="/relive-the-moment.html">Relive the Moment</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/faqs.html">FAQs</a>
+      <a href="/contact.html">Contact</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScvFBTFEnlQPlzwT0hrluWl1DMIgVdIR8G33Qqr-a1yc_fSsA/viewform?usp=sharing&ouid=112035764752614889026" class="btn-primary mobile-cta" target="_blank" rel="noopener noreferrer">Enquire Now</a>
+    </nav>
+  </header>
+
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- ── 1. HERO ──────────────────────────────────────────── -->
+    <section class="studio-hero" aria-label="The Studio hero">
+
+      <div class="studio-hero-text">
+        <h4 class="eyebrow">Our Booths</h4>
+        <h1 class="hero">The <em>Studio</em></h1>
+        <span class="studio-hero-italic">Our signature open-air booth.</span>
+        <p class="studio-hero-sub">
+          Crafted from natural wood. Built around a professional DSLR.
+          Designed to make every guest look their best.
+        </p>
+        <div>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScvFBTFEnlQPlzwT0hrluWl1DMIgVdIR8G33Qqr-a1yc_fSsA/viewform?usp=sharing&ouid=112035764752614889026"
+            class="btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Enquire About The Studio</a>
+        </div>
+      </div>
+
+      <div class="studio-hero-image" role="presentation">
+        <img
+          src="media_assets/studio-booth.jpg"
+          alt="The Studio — a beautifully crafted open-air photobooth in warm wood, set in an elegant venue"
+        >
+      </div>
+
+    </section>
+
+
+    <!-- ── 2. INTRO ─────────────────────────────────────────── -->
+    <section class="studio-intro" aria-labelledby="studio-intro-heading">
+      <div class="studio-intro-inner">
+
+        <div class="studio-intro-heading">
+          <h2 class="display" id="studio-intro-heading">
+            Photobooth quality, <em>reimagined</em>.
+          </h2>
+        </div>
+
+        <div class="studio-intro-body">
+          <p>
+            Most photobooths settle for "good enough." The Studio doesn't. Behind its warm wooden
+            frame sits a professional DSLR camera and a beauty dish light — the same kit used by
+            portrait photographers. Guests step up, the light does the work, and the result is a
+            beautifully lit, professional-grade photo, printed in seconds and shared instantly.
+          </p>
+          <p>
+            It's the kind of booth people queue for. And the kind of photo they actually keep.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── 3. DESIGNED WITH EVERY DETAIL IN MIND ───────────── -->
+    <!--
+      Consolidated section: upper half = 4 image tiles (01–04),
+      lower half = 3 text principles (05–07). One visual unit.
+    -->
+    <section class="studio-features" aria-labelledby="features-heading">
+
+      <div class="studio-features-header">
+        <h4 class="eyebrow">Why The Studio</h4>
+        <h2 class="display" id="features-heading">
+          Designed with Every <em>Detail</em> in Mind.
+        </h2>
+      </div>
+
+      <!-- Upper half: 4 image tiles, each cropping a different part of the booth -->
+      <div class="feature-tiles">
+
+        <!-- Tile 1: Dual-Screen Display — zoomed to top (screen/camera zone) -->
+        <div class="feature-tile">
+          <div class="tile-img-wrap">
+            <img
+              src="media_assets/studio-booth.jpg"
+              class="tile-crop-top"
+              alt="The Studio's dual screens — live preview on front, custom branding on the back"
+            >
+          </div>
+          <span class="tile-eyebrow">Feature · 01</span>
+          <h3 class="tile-title">Dual-Screen Display</h3>
+          <p class="tile-desc">Front screen for live previews, back screen for the moments your event deserves — custom branding, engagement photos, a live gallery, yours to shape.</p>
+        </div>
+
+        <!-- Tile 2: Beauty Dish Lighting — zoomed to upper-middle (dish/light) -->
+        <div class="feature-tile">
+          <div class="tile-img-wrap">
+            <img
+              src="media_assets/studio-booth.jpg"
+              class="tile-crop-upper"
+              alt="The Studio's beauty dish lighting — crisp, flattering illumination for every guest"
+            >
+          </div>
+          <span class="tile-eyebrow">Feature · 02</span>
+          <h3 class="tile-title">Beauty Dish Lighting</h3>
+          <p class="tile-desc">Every guest, perfectly lit. Crisp, flattering 24.1-megapixel photos that hold up at any size.</p>
+        </div>
+
+        <!-- Tile 3: Instant Digital Sharing — zoomed to far right (controls/side panel) -->
+        <div class="feature-tile">
+          <div class="tile-img-wrap">
+            <img
+              src="media_assets/studio-booth.jpg"
+              class="tile-crop-right"
+              alt="The Studio's digital sharing panel — AirDrop, text, or email in seconds"
+            >
+          </div>
+          <span class="tile-eyebrow">Feature · 03</span>
+          <h3 class="tile-title">Instant Digital Sharing</h3>
+          <p class="tile-desc">AirDrop, text, or email. Your guests' photos are on their phones before they've left the booth.</p>
+        </div>
+
+        <!-- Tile 4: Built-In Marshall Speaker — zoomed to bottom (base/speaker) -->
+        <div class="feature-tile">
+          <div class="tile-img-wrap">
+            <img
+              src="media_assets/studio-booth.jpg"
+              class="tile-crop-bottom"
+              alt="The Studio's built-in Marshall speaker — premium sound in a beautifully crafted frame"
+            >
+          </div>
+          <span class="tile-eyebrow">Feature · 04</span>
+          <h3 class="tile-title">Built-In Marshall Speaker</h3>
+          <p class="tile-desc">No DJ? No problem. Premium sound built in — for when the booth becomes the party.</p>
+        </div>
+
+      </div><!-- /.feature-tiles -->
+
+      <!-- Lower half: 3 supporting principles (05–07) -->
+      <div class="principles-grid">
+
+        <div class="principle-item">
+          <span class="principle-num">05</span>
+          <h4 class="principle-title">A Booth That Belongs in the Room</h4>
+          <p class="principle-desc">Hand-crafted from natural wood with a warm, timeless finish — The Studio blends into any venue without overpowering the space. No bulky plastic. No distracting branding.</p>
+        </div>
+
+        <div class="principle-item">
+          <span class="principle-num">06</span>
+          <h4 class="principle-title">Open-Air Design</h4>
+          <p class="principle-desc">No curtains, no cramped boxes. The open-air setup means groups of any size can jump in together — and it keeps the energy around the booth high all night.</p>
+        </div>
+
+        <div class="principle-item">
+          <span class="principle-num">07</span>
+          <h4 class="principle-title">Prints in Seconds</h4>
+          <p class="principle-desc">Photos printed on-site in seconds using professional dye-sublimation technology. Classic strip (2×6) or postcard (4×6) — both on premium, smudge-proof paper built to last.</p>
+        </div>
+
+      </div><!-- /.principles-grid -->
+
+    </section>
+
+
+    <!-- ── 4. WHAT'S INCLUDED ───────────────────────────────── -->
+    <section class="studio-included" aria-labelledby="included-heading">
+      <div class="studio-included-inner">
+
+        <div class="studio-included-heading">
+          <h4 class="eyebrow">What's Included</h4>
+          <h2 class="display" id="included-heading">
+            The Studio, <em>fully</em> loaded.
+          </h2>
+          <p class="body-large" style="color: var(--stone); margin-top: 24px;">
+            Every Studio booking includes the full Moment Lab experience.
+          </p>
+        </div>
+
+        <ul class="included-list">
+          <li>Unlimited keepsake prints</li>
+          <li>Instant digital sharing via QR code</li>
+          <li>Premium backdrop of your choice</li>
+          <li>Curated prop selection</li>
+          <li>Personalised welcome screen</li>
+          <li>Dedicated booth attendant throughout</li>
+          <li>Full setup and breakdown</li>
+          <li>Live photo display</li>
+          <li>Full-resolution digital gallery after your event</li>
+        </ul>
+
+      </div>
+    </section>
+
+
+    <!-- ── 5. THE SPECS ─────────────────────────────────────── -->
+    <section class="studio-specs" aria-labelledby="specs-heading">
+      <div class="studio-specs-inner">
+
+        <div class="studio-specs-heading">
+          <h4 class="eyebrow">Technical</h4>
+          <h2 class="display" id="specs-heading">
+            Built <em>Properly</em>. Runs Beautifully.
+          </h2>
+        </div>
+
+        <table class="specs-table" aria-label="The Studio technical specifications">
+          <tbody>
+            <tr>
+              <td class="spec-label">Camera</td>
+              <td class="spec-value">Professional DSLR</td>
+            </tr>
+            <tr>
+              <td class="spec-label">Lighting</td>
+              <td class="spec-value">Beauty dish</td>
+            </tr>
+            <tr>
+              <td class="spec-label">Prints</td>
+              <td class="spec-value">Dye-sublimation, strip (2×6) or postcard (4×6)</td>
+            </tr>
+            <tr>
+              <td class="spec-label">Format</td>
+              <td class="spec-value">Open-air, wooden frame</td>
+            </tr>
+            <tr>
+              <td class="spec-label">Footprint</td>
+              <td class="spec-value">Approx. 3m × 3m of floor space</td>
+            </tr>
+            <tr>
+              <td class="spec-label">Power</td>
+              <td class="spec-value">One standard plug socket within 5m</td>
+            </tr>
+            <tr>
+              <td class="spec-label">Setup Time</td>
+              <td class="spec-value">60–90 minutes before guests arrive</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </section>
+
+
+    <!-- ── 6. TESTIMONIAL ───────────────────────────────────── -->
+    <section class="studio-testimonial" aria-label="Client testimonial">
+      <div class="studio-testimonial-inner">
+        <span class="studio-t-mark" aria-hidden="true">&#8220;</span>
+        <p class="studio-t-quote">
+          We were so glad we didn't go with one of those tacky booths — Moment Lab genuinely made our event look classy. Weeks later, people are still bringing it up.
+        </p>
+        <span class="studio-t-rule" aria-hidden="true"></span>
+        <p class="studio-t-name">— Nuel</p>
+      </div>
+    </section>
+
+
+    <!-- ── 7. CLOSING CTA ───────────────────────────────────── -->
+    <section class="studio-cta" aria-labelledby="studio-cta-heading">
+      <div class="studio-cta-inner">
+
+        <p class="caption studio-cta-eyebrow">Get in Touch</p>
+
+        <h2 class="display" id="studio-cta-heading">
+          Let's Plan Your <em>Moment</em>.
+        </h2>
+
+        <p class="studio-cta-sub">
+          Tell us a little about your event and we'll come back to you with a tailored package —
+          usually within 24 hours.
+        </p>
+
+        <div class="studio-cta-buttons">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScvFBTFEnlQPlzwT0hrluWl1DMIgVdIR8G33Qqr-a1yc_fSsA/viewform?usp=sharing&ouid=112035764752614889026"
+            class="btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Enquire About The Studio</a>
+        </div>
+
+        <p class="studio-cta-aside">
+          Prefer to see the other option? <a href="/the-looking-glass.html">Meet The Looking Glass →</a>
+        </p>
+
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <img
+          src="brand_assets/moment-lab-primary.svg"
+          alt="Moment Lab"
+          class="footer-logo"
+        >
+        <p class="footer-tagline">Premium photobooth experiences across Newcastle &amp; the North East.</p>
+        <p class="footer-sub">Weddings · Corporate Events · Celebrations</p>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Explore</p>
+        <ul class="footer-links">
+          <li><a href="/the-studio.html">Our Booths</a></li>
+          <li><a href="/relive-the-moment.html">Relive the Moment</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/faqs.html">FAQs</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Get in Touch</p>
+        <div class="footer-contact-line">
+          <a href="mailto:hello@momentlab.co.uk">hello@momentlab.co.uk</a>
+          <a href="tel:+447345686762">+44 7345 686762</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://instagram.com/momentlab.co" target="_blank" rel="noopener noreferrer" aria-label="Moment Lab on Instagram">Instagram</a>
+          <a href="https://facebook.com/momentlab.co" target="_blank" rel="noopener noreferrer" aria-label="Moment Lab on Facebook">Facebook</a>
+          <a href="https://tiktok.com/@momentlab.co" target="_blank" rel="noopener noreferrer" aria-label="Moment Lab on TikTok">TikTok</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-legal">
+      <p class="footer-legal-copy">© Moment Lab 2026. All rights reserved.</p>
+      <ul class="footer-legal-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="/assets/main.js"></script>
+
+</body>
+</html>

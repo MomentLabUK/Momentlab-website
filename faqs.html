@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions | Moment Lab</title>
+  <meta name="description" content="Everything you need to know about booking Moment Lab — setup, space requirements, prints, travel, and what happens on the day. Newcastle and the North East.">
+
+  <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://momentlab.co.uk/faqs.html">
+  <meta property="og:title" content="Frequently Asked Questions | Moment Lab">
+  <meta property="og:description" content="Everything you need to know about booking Moment Lab — setup, space requirements, prints, travel, and what happens on the day. Newcastle and the North East.">
+  <meta property="og:image" content="https://momentlab.co.uk/og-image.jpg">
+  <meta property="og:site_name" content="Moment Lab">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://momentlab.co.uk/faqs.html">
+  <meta name="twitter:title" content="Frequently Asked Questions | Moment Lab">
+  <meta name="twitter:description" content="Everything you need to know about booking Moment Lab — setup, space requirements, prints, travel, and what happens on the day. Newcastle and the North East.">
+  <meta name="twitter:image" content="https://momentlab.co.uk/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/favicon-32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* ============================================================
+       FAQs — page-specific styles
+       ============================================================ */
+
+    /* ── 1. HERO ─────────────────────────────────────────────── */
+    .faqs-hero {
+      background: var(--obsidian);
+      padding: 200px 8vw 100px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .faqs-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 15% 60%, rgba(201,168,76,0.05) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 50% at 85% 0%, rgba(201,168,76,0.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .faqs-hero-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .faqs-hero h4.eyebrow {
+      justify-content: center;
+      flex-wrap: wrap;
+      color: var(--gilt);
+      margin-bottom: 32px;
+    }
+
+    .faqs-hero h1.hero {
+      color: var(--bone);
+      margin-bottom: 36px;
+    }
+
+    .faqs-hero-sub {
+      font-size: 17px;
+      line-height: 1.7;
+      font-weight: 300;
+      color: var(--stone);
+      max-width: 60ch;
+      margin: 0 auto;
+    }
+
+    .faqs-hero-link {
+      color: var(--gilt);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.4);
+      transition: color 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+                  border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .faqs-hero-link:hover {
+      color: var(--gilt-soft);
+      border-bottom-color: var(--gilt-soft);
+    }
+
+    .faqs-hero-link:focus-visible {
+      outline: 2px solid var(--gilt);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 639px) {
+      .faqs-hero {
+        padding: 152px 6vw 64px;
+        align-items: flex-start;
+      }
+    }
+
+    /* ── 2. FAQ ACCORDION BLOCK ──────────────────────────────── */
+    .faqs-block {
+      background: var(--bone);
+      padding: 120px 8vw 120px;
+    }
+
+    .faq-container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* Category header */
+    .faq-cat-header {
+      margin-bottom: 48px;
+    }
+
+    .faq-cat-header h4.eyebrow {
+      color: var(--gilt-deep);
+      margin-bottom: 18px;
+    }
+
+    .faq-cat-header h3.sub {
+      color: var(--obsidian);
+      margin-bottom: 0;
+    }
+
+    /* Divider between categories */
+    .faq-divider {
+      width: 48px;
+      height: 1px;
+      background: rgba(201, 168, 76, 0.25);
+      margin: 80px auto;
+    }
+
+    /* The list wrapper — closing border at bottom */
+    .faq-list {
+      border-bottom: 1px solid var(--line-dark);
+    }
+
+    /* Each accordion item */
+    details.faq-item {
+      border-top: 1px solid var(--line-dark);
+    }
+
+    /* Hide native marker */
+    details.faq-item > summary {
+      list-style: none;
+    }
+
+    details.faq-item > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    /* Summary row */
+    summary.faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 28px 0;
+      cursor: pointer;
+      user-select: none;
+      outline: none;
+    }
+
+    summary.faq-question:focus-visible {
+      outline: 2px solid var(--gilt);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    /* Question text */
+    .faq-q-text {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+      line-height: 1.4;
+      color: var(--obsidian);
+      flex: 1;
+      transition: color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    summary.faq-question:hover .faq-q-text {
+      color: var(--gilt-deep);
+    }
+
+    details[open] summary.faq-question .faq-q-text {
+      color: var(--gilt-deep);
+    }
+
+    /* Chevron icon */
+    .faq-chevron {
+      flex-shrink: 0;
+      color: var(--gilt-deep);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    summary.faq-question:hover .faq-chevron {
+      color: var(--gilt);
+    }
+
+    details[open] .faq-chevron {
+      transform: rotate(180deg);
+      color: var(--gilt);
+    }
+
+    /* Body — always in DOM, animated via JS max-height */
+    details.faq-item > .faq-body {
+      display: block !important;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                  opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      details.faq-item > .faq-body {
+        transition: none;
+      }
+
+      .faq-chevron {
+        transition: none;
+      }
+    }
+
+    .faq-answer {
+      padding-bottom: 28px;
+    }
+
+    .faq-answer p {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--stone);
+      max-width: 65ch;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 639px) {
+      .faqs-block {
+        padding: 80px 6vw 80px;
+      }
+
+      .faq-divider {
+        margin: 60px auto;
+      }
+
+      summary.faq-question {
+        padding: 24px 0;
+      }
+
+      .faq-cat-header {
+        margin-bottom: 36px;
+      }
+    }
+
+    /* ── 3. CLOSING CTA ──────────────────────────────────────── */
+    .faqs-cta {
+      background: var(--obsidian);
+      padding: 140px 8vw 140px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .faqs-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 55% at 50% 110%, rgba(201,168,76,0.06) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .faqs-cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 60ch;
+      margin: 0 auto;
+    }
+
+    .faqs-cta-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 32px;
+      color: var(--gilt-soft);
+    }
+
+    .faqs-cta-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--gilt);
+      flex-shrink: 0;
+    }
+
+    .faqs-cta h2.display {
+      color: var(--bone);
+      margin-bottom: 28px;
+    }
+
+    .faqs-cta-sub {
+      color: var(--stone);
+      max-width: 50ch;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+    }
+
+    .faqs-cta-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 639px) {
+      .faqs-cta {
+        padding: 100px 6vw 100px;
+      }
+
+      .faqs-cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .faqs-cta-buttons .btn-primary,
+      .faqs-cta-buttons .btn-ghost {
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="site-nav" role="banner">
+    <div class="nav-inner">
+
+      <a href="/" class="nav-logo" aria-label="Moment Lab — home">
+        <img src="brand_assets/moment-lab-primary.svg" alt="Moment Lab">
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li class="nav-dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">
+              Our Booths
+              <span class="chevron" aria-hidden="true"></span>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="/the-studio.html" role="menuitem">The Studio</a>
+              <a href="/the-looking-glass.html" role="menuitem">
+                The Looking Glass
+                <span class="nav-soon-badge">Coming Soon</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="/relive-the-moment.html">Relive the Moment</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/faqs.html">FAQs</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScvFBTFEnlQPlzwT0hrluWl1DMIgVdIR8G33Qqr-a1yc_fSsA/viewform?usp=sharing&ouid=112035764752614889026" class="btn-primary" target="_blank" rel="noopener noreferrer">Enquire Now</a>
+      </div>
+
+      <button
+        class="nav-hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+    <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile navigation">
+      <a href="/the-studio.html">The Studio</a>
+      <a href="/the-looking-glass.html">
+        The Looking Glass
+        <span class="soon">Coming Soon</span>
+      </a>
+      <a href="/relive-the-moment.html">Relive the Moment</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/faqs.html">FAQs</a>
+      <a href="/contact.html">Contact</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScvFBTFEnlQPlzwT0hrluWl1DMIgVdIR8G33Qqr-a1yc_fSsA/viewform?usp=sharing&ouid=112035764752614889026" class="btn-primary mobile-cta" target="_blank" rel="noopener noreferrer">Enquire Now</a>
+    </nav>
+  </header>
+
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- ── 1. HERO ────────────────────────────────────────── -->
+    <section class="faqs-hero" aria-label="Page hero">
+      <div class="faqs-hero-inner">
+
+        <h4 class="eyebrow">Questions? We've Got Answers</h4>
+
+        <h1 class="hero">Frequently Asked <em>Questions</em>.</h1>
+
+        <p class="faqs-hero-sub">
+          Everything you need to know before you book — from setup to space requirements to what happens on the day. Can't find what you're looking for? <a href="/contact.html" class="faqs-hero-link">Get in touch →</a> and we'll answer it personally.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ── 2. FAQ ACCORDION BLOCK ──────────────────────────── -->
+    <section class="faqs-block" aria-label="Frequently asked questions">
+      <div class="faq-container">
+
+
+        <!-- ── CATEGORY 1: Booking & Planning ── -->
+        <div class="faq-category">
+          <div class="faq-cat-header">
+            <h4 class="eyebrow">01 · Planning Ahead</h4>
+            <h3 class="sub">Booking &amp; Planning</h3>
+          </div>
+
+          <div class="faq-list">
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-q-text">How far in advance should I book?</span>
+                <svg class="faq-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+                  <polyline points="1,1 8,9 15,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  <p>We'd recommend getting in touch as early as possible — popular dates, especially in peak season (May–September and December), tend to book up 6–12 months ahead. That said, we do our best to accommodate shorter notice wherever we can, so it's always worth asking.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-q-text">How do I secure my date?</span>
+                <svg class="faq-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+                  <polyline points="1,1 8,9 15,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  <p>Once you're happy with your bespoke package, your date is secured with a deposit and a signed contract. Until then, dates are held on a first-come, first-served basis.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-q-text">Do you offer packages?</span>
+                <svg class="faq-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+                  <polyline points="1,1 8,9 15,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  <p>Every Moment Lab booking is tailored to the event. We'll put together a bespoke package based on your date, venue, guest count, and any add-ons you'd like — so you only pay for what suits your day.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-q-text">Can I make changes after I've booked?</span>
+                <svg class="faq-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+                  <polyline points="1,1 8,9 15,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  <p>Of course. Life happens, plans shift. As long as we have enough notice, we're happy to adjust timings, backdrops, or add-ons in the lead-up to your event.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-q-text">Do you travel outside Newcastle?</span>
+                <svg class="faq-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+                  <polyline points="1,1 8,9 15,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  <p>Yes — we cover Newcastle and the wider North East as standard, and we're happy to travel further for the right event. Just mention your venue in your enquiry and we'll confirm.</p>
+                </div>
+              </div>
+            </details>
+
+          </div><!-- /.faq-list -->
+        </div><!-- /.faq-category -->
+
+
+        <div class="faq-divider" aria-hidden="true"></div>
+
+
+        <!-- ── CATEGORY 2: On the Day ── -->
+        <div class="faq-category">
+          <div class="faq-cat-header">
+            <h4 class="eyebrow">02 · On the Day</h4>
+            <h3 class="sub">When We Arrive</h3>
+          </div>
+
+          <div class="faq-list">
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-q-text">How long does setup take?</span>
+                <svg class="faq-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+                  <polyline points="1,1 8,9 15,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  <p>We arrive 60–90 minutes before your booth is due to open, fully set up, test everything, and make sure it's ready to go before your guests arrive. Packdown takes around 45 minutes at the end of the hire.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-q-text">How much space do you need?</span>
+                <svg class="faq-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+                  <polyline points="1,1 8,9 15,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  <p>Roughly 2m x 2m of floor space, with a ceiling height of at least 2.2m. If your venue is tighter than that, get in touch — we can usually work something out.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-q-text">What about power?</span>
+                <svg class="faq-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+                  <polyline points="1,1 8,9 15,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  <p>A single standard plug socket within 5m of the setup location is all we need.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-q-text">Will someone be with the booth the whole time?</span>
+                <svg class="faq-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+                  <polyline points="1,1 8,9 15,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  <p>Yes — every booking includes a dedicated Moment Lab attendant on-site throughout your hire. They'll run the booth, help guests, keep prints flowing, and make sure every shot looks its best.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-q-text">Can we have the booth set up earlier than it starts?</span>
+                <svg class="faq-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+                  <polyline points="1,1 8,9 15,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  <p>Absolutely. If your venue has access restrictions or you'd like the booth styled and ready well before guests arrive, let us know — we'll build it into the plan.</p>
+                </div>
+              </div>
+            </details>
+
+          </div><!-- /.faq-list -->
+        </div><!-- /.faq-category -->
+
+
+        <div class="faq-divider" aria-hidden="true"></div>
+
+
+        <!-- ── CATEGORY 3: Photos & Prints ── -->
+        <div class="faq-category">
+          <div class="faq-cat-header">
+            <h4 class="eyebrow">03 · The Keepsakes</h4>
+            <h3 class="sub">Photos &amp; Prints</h3>
+          </div>
+
+          <div class="faq-list">
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-q-text">How many prints do guests get?</span>
+                <svg class="faq-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+                  <polyline points="1,1 8,9 15,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  <p>Unlimited. Every guest in every photo walks away with their own print — no restrictions, no "one per group."</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-q-text">What size are the prints?</span>
+                <svg class="faq-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+                  <polyline points="1,1 8,9 15,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  <p>You choose — classic strip (2x6) or postcard (4x6). Both are printed on premium photo paper using professional dye-sublimation technology, which means they're smudge-proof, water-resistant, and built to last.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-q-text">Can we personalise the prints?</span>
+                <svg class="faq-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+                  <polyline points="1,1 8,9 15,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  <p>Yes. Every print includes a custom design — your names, date, event, logo, or whatever you'd like. We'll share proofs with you before the day.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-q-text">How do guests get the digital versions?</span>
+                <svg class="faq-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+                  <polyline points="1,1 8,9 15,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  <p>A QR code on the booth screen sends their photo straight to their phone within seconds — ready to share however they like.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-q-text">When do we get all the photos?</span>
+                <svg class="faq-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+                  <polyline points="1,1 8,9 15,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  <p>Your full digital gallery is delivered within 72 hours of your event. Every photo, full resolution, yours to keep and share.</p>
+                </div>
+              </div>
+            </details>
+
+          </div><!-- /.faq-list -->
+        </div><!-- /.faq-category -->
+
+
+        <div class="faq-divider" aria-hidden="true"></div>
+
+
+        <!-- ── CATEGORY 4: The Unexpected ── -->
+        <div class="faq-category">
+          <div class="faq-cat-header">
+            <h4 class="eyebrow">04 · Just in Case</h4>
+            <h3 class="sub">The Unexpected</h3>
+          </div>
+
+          <div class="faq-list">
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-q-text">What if we need to cancel?</span>
+                <svg class="faq-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+                  <polyline points="1,1 8,9 15,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  <p>We'll always do our best to work with you. Our full cancellation and rescheduling terms are outlined in your contract — if you'd like more detail before booking, just ask.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-q-text">Do you have insurance?</span>
+                <svg class="faq-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+                  <polyline points="1,1 8,9 15,1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="faq-body">
+                <div class="faq-answer">
+                  <p>Yes — we hold full public liability insurance, and we're happy to share documentation with your venue if they require it.</p>
+                </div>
+              </div>
+            </details>
+
+          </div><!-- /.faq-list -->
+        </div><!-- /.faq-category -->
+
+
+      </div><!-- /.faq-container -->
+    </section><!-- /.faqs-block -->
+
+
+    <!-- ── 3. CLOSING CTA ─────────────────────────────────── -->
+    <section class="faqs-cta" aria-labelledby="faqs-cta-heading">
+      <div class="faqs-cta-inner">
+
+        <p class="caption faqs-cta-eyebrow">Still Curious?</p>
+
+        <h2 class="display" id="faqs-cta-heading">If we haven't covered it, we'll <em>answer</em> it.</h2>
+
+        <p class="body-large faqs-cta-sub">
+          Drop us a line and we'll come back with an answer — usually within 24 hours.
+        </p>
+
+        <div class="faqs-cta-buttons">
+          <a href="/contact.html" class="btn-primary">Get in Touch</a>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScvFBTFEnlQPlzwT0hrluWl1DMIgVdIR8G33Qqr-a1yc_fSsA/viewform?usp=sharing&ouid=112035764752614889026"
+            class="btn-ghost"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Enquire Now</a>
+        </div>
+
+      </div>
+    </section><!-- /.faqs-cta -->
+
+
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <img
+          src="brand_assets/moment-lab-primary.svg"
+          alt="Moment Lab"
+          class="footer-logo"
+        >
+        <p class="footer-tagline">Premium photobooth experiences across Newcastle &amp; the North East.</p>
+        <p class="footer-sub">Weddings · Corporate Events · Celebrations</p>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Explore</p>
+        <ul class="footer-links">
+          <li><a href="/the-studio.html">Our Booths</a></li>
+          <li><a href="/relive-the-moment.html">Relive the Moment</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/faqs.html">FAQs</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Get in Touch</p>
+        <div class="footer-contact-line">
+          <a href="mailto:hello@momentlab.co.uk">hello@momentlab.co.uk</a>
+          <a href="tel:+447345686762">+44 7345 686762</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://instagram.com/momentlab.co" target="_blank" rel="noopener noreferrer" aria-label="Moment Lab on Instagram">Instagram</a>
+          <a href="https://facebook.com/momentlab.co" target="_blank" rel="noopener noreferrer" aria-label="Moment Lab on Facebook">Facebook</a>
+          <a href="https://tiktok.com/@momentlab.co" target="_blank" rel="noopener noreferrer" aria-label="Moment Lab on TikTok">TikTok</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-legal">
+      <p class="footer-legal-copy">© Moment Lab 2026. All rights reserved.</p>
+      <ul class="footer-legal-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="/assets/main.js"></script>
+  <script>
+    /* ── FAQ Accordion ───────────────────────────────────────── */
+    (function () {
+      const allDetails = document.querySelectorAll('details.faq-item');
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      allDetails.forEach(function (det) {
+        var summary = det.querySelector('summary.faq-question');
+        if (!summary) return;
+
+        summary.addEventListener('click', function (e) {
+          e.preventDefault();
+          var isOpen = det.hasAttribute('open');
+
+          /* Close all other open items */
+          allDetails.forEach(function (other) {
+            if (other !== det && other.hasAttribute('open')) {
+              collapseItem(other);
+            }
+          });
+
+          /* Toggle clicked item */
+          if (isOpen) {
+            collapseItem(det);
+          } else {
+            expandItem(det);
+          }
+        });
+      });
+
+      function expandItem(det) {
+        var body = det.querySelector('.faq-body');
+        if (!body) return;
+        det.setAttribute('open', '');
+        if (prefersReduced) {
+          body.style.maxHeight = 'none';
+          body.style.opacity = '1';
+        } else {
+          body.style.maxHeight = body.scrollHeight + 'px';
+          body.style.opacity = '1';
+        }
+      }
+
+      function collapseItem(det) {
+        var body = det.querySelector('.faq-body');
+        if (!body) return;
+        /* Remove open attribute immediately so chevron animates back */
+        det.removeAttribute('open');
+        body.style.maxHeight = '0';
+        body.style.opacity = '0';
+      }
+    })();
+  </script>
+
+</body>
+</html>

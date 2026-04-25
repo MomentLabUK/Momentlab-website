@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relive the Moment — Access Your Gallery | Moment Lab</title>
+  <meta name="description" content="Access your Moment Lab event gallery. Every photo from your booth, in full resolution, ready to download and share. Galleries live for 12 months.">
+
+  <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://momentlab.co.uk/relive-the-moment.html">
+  <meta property="og:title" content="Relive the Moment — Access Your Gallery | Moment Lab">
+  <meta property="og:description" content="Access your Moment Lab event gallery. Every photo from your booth, in full resolution, ready to download and share. Galleries live for 12 months.">
+  <meta property="og:image" content="https://momentlab.co.uk/og-image.jpg">
+  <meta property="og:site_name" content="Moment Lab">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://momentlab.co.uk/relive-the-moment.html">
+  <meta name="twitter:title" content="Relive the Moment — Access Your Gallery | Moment Lab">
+  <meta name="twitter:description" content="Access your Moment Lab event gallery. Every photo from your booth, in full resolution, ready to download and share. Galleries live for 12 months.">
+  <meta name="twitter:image" content="https://momentlab.co.uk/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/favicon-32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* ============================================================
+       Relive the Moment — page-specific styles
+       ============================================================ */
+
+    /* ── 1. HERO ─────────────────────────────────────────────── */
+    .rtm-hero {
+      background: var(--obsidian);
+      padding: 200px 8vw 100px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .rtm-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 20% 50%, rgba(201,168,76,0.05) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 50% at 85% 10%, rgba(201,168,76,0.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .rtm-hero-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .rtm-hero h4.eyebrow {
+      justify-content: center;
+      color: var(--gilt);
+      margin-bottom: 32px;
+    }
+
+    .rtm-hero h1.hero {
+      color: var(--bone);
+      margin-bottom: 36px;
+    }
+
+    .rtm-hero-sub {
+      font-size: 17px;
+      line-height: 1.7;
+      font-weight: 300;
+      color: var(--stone);
+      max-width: 50ch;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 639px) {
+      .rtm-hero {
+        padding: 152px 6vw 64px;
+        align-items: flex-start;
+      }
+    }
+
+    /* ── 2. GALLERY ACCESS ───────────────────────────────────── */
+    .rtm-access {
+      background: var(--bone);
+      padding: 120px 8vw 120px;
+    }
+
+    .rtm-access-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .rtm-access-intro h4.eyebrow {
+      margin-bottom: 24px;
+    }
+
+    .rtm-access-intro h3.sub {
+      color: var(--obsidian);
+      margin-bottom: 24px;
+    }
+
+    .rtm-access-intro > p {
+      color: var(--stone);
+      max-width: 42ch;
+    }
+
+    /* Form */
+    .rtm-form {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .rtm-form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .rtm-form-field label {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--stone);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .rtm-form-field input {
+      background: transparent;
+      border: 1px solid rgba(10, 10, 10, 0.14);
+      padding: 14px 18px;
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--obsidian);
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+                  box-shadow   0.2s cubic-bezier(0.22, 1, 0.36, 1);
+      -webkit-appearance: none;
+      border-radius: 0;
+      appearance: none;
+    }
+
+    .rtm-form-field input:focus {
+      border-color: var(--gilt);
+      box-shadow: 0 0 0 1px var(--gilt);
+    }
+
+    .rtm-form-field input::placeholder {
+      color: var(--stone);
+      opacity: 0.45;
+    }
+
+    .rtm-form-field input[type="date"]::-webkit-calendar-picker-indicator {
+      opacity: 0.35;
+      cursor: pointer;
+    }
+
+    .rtm-form-help {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--stone);
+      margin: 0;
+      max-width: none;
+      line-height: 1.5;
+    }
+
+    .rtm-form-submit {
+      margin-top: 4px;
+    }
+
+    .rtm-form-submit .btn-primary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .rtm-form-note {
+      text-align: center;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--stone);
+      margin: 0;
+      max-width: none;
+      line-height: 1.6;
+    }
+
+    .rtm-form-note a {
+      color: var(--gilt-deep);
+      border-bottom: 1px solid rgba(143, 117, 48, 0.3);
+      transition: color 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+                  border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .rtm-form-note a:hover {
+      color: var(--gilt);
+      border-bottom-color: var(--gilt);
+    }
+
+    .rtm-form-note a:focus-visible {
+      outline: 2px solid var(--gilt);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 1023px) {
+      .rtm-access {
+        padding: 80px 6vw 80px;
+      }
+
+      .rtm-access-inner {
+        grid-template-columns: 1fr;
+        gap: 56px;
+      }
+    }
+
+    /* ── 3. WHAT TO EXPECT ───────────────────────────────────── */
+    .rtm-expect {
+      background: var(--obsidian);
+      color: var(--bone);
+      padding: 120px 8vw 120px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rtm-expect::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 100% 0%, rgba(201,168,76,0.05) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 0% 100%, rgba(201,168,76,0.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .rtm-expect-header {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin-bottom: 80px;
+    }
+
+    .rtm-expect-header h4.eyebrow {
+      color: var(--gilt);
+      margin-bottom: 28px;
+    }
+
+    .rtm-expect-header h2.display {
+      color: var(--bone);
+      margin-bottom: 28px;
+    }
+
+    .rtm-expect-header .body-large {
+      color: var(--stone);
+      max-width: 60ch;
+      margin-bottom: 0;
+    }
+
+    .rtm-items {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0 48px;
+      margin-bottom: 64px;
+    }
+
+    .rtm-item {
+      padding-top: 32px;
+      border-top: 1px solid rgba(201, 168, 76, 0.18);
+    }
+
+    .rtm-item-num {
+      display: block;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--gilt);
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+
+    .rtm-item-title {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bone);
+      margin: 0 0 10px 0;
+      line-height: 1.5;
+      max-width: none;
+    }
+
+    .rtm-item-desc {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--stone);
+      margin: 0;
+      max-width: none;
+    }
+
+    .rtm-expect-footnote {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      line-height: 1.55;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--stone);
+      max-width: 52ch;
+      margin: 0 auto;
+    }
+
+    .rtm-expect-footnote strong {
+      font-weight: 500;
+      font-style: italic;
+      font-family: var(--sans);
+      color: var(--bone);
+      letter-spacing: 0.01em;
+    }
+
+    @media (min-width: 640px) and (max-width: 1023px) {
+      .rtm-items {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 48px;
+      }
+    }
+
+    @media (max-width: 639px) {
+      .rtm-expect {
+        padding: 80px 6vw 80px;
+      }
+
+      .rtm-expect-header {
+        margin-bottom: 56px;
+      }
+
+      .rtm-items {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 48px;
+      }
+    }
+
+    /* ── 4. FOR GUESTS ───────────────────────────────────────── */
+    .rtm-guests {
+      background: var(--bone);
+      padding: 120px 8vw 120px;
+    }
+
+    .rtm-guests-inner {
+      max-width: 60ch;
+      margin: 0 auto;
+    }
+
+    .rtm-guests h4.eyebrow {
+      margin-bottom: 24px;
+    }
+
+    .rtm-guests h3.sub {
+      color: var(--obsidian);
+      margin-bottom: 28px;
+    }
+
+    .rtm-guests p {
+      color: var(--stone);
+      max-width: 60ch;
+    }
+
+    @media (max-width: 639px) {
+      .rtm-guests {
+        padding: 80px 6vw 80px;
+      }
+    }
+
+    /* ── 5. PRIVACY ──────────────────────────────────────────── */
+    .rtm-privacy {
+      background: var(--obsidian);
+      padding: 100px 8vw 100px;
+    }
+
+    .rtm-privacy-inner {
+      max-width: 60ch;
+      margin: 0 auto;
+    }
+
+    .rtm-privacy h4.eyebrow {
+      color: var(--gilt);
+      margin-bottom: 24px;
+    }
+
+    .rtm-privacy h3.sub {
+      color: var(--bone);
+      margin-bottom: 28px;
+    }
+
+    .rtm-privacy p {
+      color: var(--stone);
+      max-width: 60ch;
+    }
+
+    @media (max-width: 639px) {
+      .rtm-privacy {
+        padding: 72px 6vw 72px;
+      }
+    }
+
+    /* ── 6. CLOSING CTA ──────────────────────────────────────── */
+    .rtm-cta {
+      background: var(--bone);
+      padding: 140px 8vw 140px;
+      text-align: center;
+    }
+
+    .rtm-cta-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .rtm-cta-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--gilt);
+      flex-shrink: 0;
+    }
+
+    .rtm-cta h2.display {
+      color: var(--obsidian);
+      margin-bottom: 28px;
+    }
+
+    .rtm-cta-sub {
+      color: var(--stone);
+      max-width: 50ch;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+    }
+
+    .rtm-cta-btn {
+      margin-top: 48px;
+    }
+
+    @media (max-width: 639px) {
+      .rtm-cta {
+        padding: 100px 6vw 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="site-nav" role="banner">
+    <div class="nav-inner">
+
+      <a href="/" class="nav-logo" aria-label="Moment Lab — home">
+        <img src="brand_assets/moment-lab-primary.svg" alt="Moment Lab">
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li class="nav-dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">
+              Our Booths
+              <span class="chevron" aria-hidden="true"></span>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="/the-studio.html" role="menuitem">The Studio</a>
+              <a href="/the-looking-glass.html" role="menuitem">
+                The Looking Glass
+                <span class="nav-soon-badge">Coming Soon</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="/relive-the-moment.html">Relive the Moment</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/faqs.html">FAQs</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScvFBTFEnlQPlzwT0hrluWl1DMIgVdIR8G33Qqr-a1yc_fSsA/viewform?usp=sharing&ouid=112035764752614889026" class="btn-primary" target="_blank" rel="noopener noreferrer">Enquire Now</a>
+      </div>
+
+      <button
+        class="nav-hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+    <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile navigation">
+      <a href="/the-studio.html">The Studio</a>
+      <a href="/the-looking-glass.html">
+        The Looking Glass
+        <span class="soon">Coming Soon</span>
+      </a>
+      <a href="/relive-the-moment.html">Relive the Moment</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/faqs.html">FAQs</a>
+      <a href="/contact.html">Contact</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScvFBTFEnlQPlzwT0hrluWl1DMIgVdIR8G33Qqr-a1yc_fSsA/viewform?usp=sharing&ouid=112035764752614889026" class="btn-primary mobile-cta" target="_blank" rel="noopener noreferrer">Enquire Now</a>
+    </nav>
+  </header>
+
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- ── 1. HERO ────────────────────────────────────────── -->
+    <section class="rtm-hero" aria-label="Page hero">
+      <div class="rtm-hero-inner">
+
+        <h4 class="eyebrow">Gallery Access</h4>
+
+        <h1 class="hero">Relive the <em>Moment</em>.</h1>
+
+        <p class="rtm-hero-sub">
+          Your event gallery, ready when you are. Every photo, full resolution, yours to download and share.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ── 2. GALLERY ACCESS ──────────────────────────────── -->
+    <section class="rtm-access" aria-labelledby="access-heading">
+      <div class="rtm-access-inner">
+
+        <!-- Left: intro block -->
+        <div class="rtm-access-intro">
+          <h4 class="eyebrow">Welcome Back</h4>
+          <h3 class="sub" id="access-heading">Find Your Gallery.</h3>
+          <p>
+            Whether you're the host reliving your big day, or a guest looking for the photos from the night, you'll find everything here. Enter your event details below to access your gallery.
+          </p>
+        </div>
+
+        <!-- Right: gallery access form -->
+        <div class="rtm-access-form">
+          <form
+            class="rtm-form"
+            action="#"
+            method="post"
+            id="gallery-access-form"
+            novalidate
+          >
+
+            <div class="rtm-form-field">
+              <label for="event-date">Event date</label>
+              <input
+                type="date"
+                id="event-date"
+                name="event_date"
+                required
+                autocomplete="off"
+              >
+            </div>
+
+            <div class="rtm-form-field">
+              <label for="host-name">Host name</label>
+              <input
+                type="text"
+                id="host-name"
+                name="host_name"
+                required
+                autocomplete="name"
+                placeholder="First and last name"
+              >
+              <p class="rtm-form-help">The person who booked the event</p>
+            </div>
+
+            <div class="rtm-form-field">
+              <label for="access-code">Access code</label>
+              <input
+                type="text"
+                id="access-code"
+                name="access_code"
+                required
+                autocomplete="off"
+                placeholder="e.g. ML-2026-XXXXXX"
+              >
+              <p class="rtm-form-help">Sent to you by email after your event</p>
+            </div>
+
+            <div class="rtm-form-submit">
+              <button type="submit" class="btn-primary">View Gallery</button>
+            </div>
+
+            <p class="rtm-form-note">
+              Can't find your access code? <a href="/contact.html">Get in touch →</a> and we'll send it over.
+            </p>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── 3. WHAT TO EXPECT ──────────────────────────────── -->
+    <section class="rtm-expect" aria-labelledby="expect-heading">
+
+      <div class="rtm-expect-header">
+        <h4 class="eyebrow">What's Inside</h4>
+        <h2 class="display" id="expect-heading">Everything from the night, in <em>one</em> place.</h2>
+        <p class="body-large">
+          Your gallery includes every photo taken at the booth during your event — in full resolution, untouched, and ready to download individually or all at once as a zip file.
+        </p>
+      </div>
+
+      <div class="rtm-items">
+
+        <div class="rtm-item">
+          <span class="rtm-item-num">01</span>
+          <p class="rtm-item-title">Download individual photos</p>
+          <p class="rtm-item-desc">Straight to your phone or computer</p>
+        </div>
+
+        <div class="rtm-item">
+          <span class="rtm-item-num">02</span>
+          <p class="rtm-item-title">Download the full gallery</p>
+          <p class="rtm-item-desc">As a single zip file</p>
+        </div>
+
+        <div class="rtm-item">
+          <span class="rtm-item-num">03</span>
+          <p class="rtm-item-title">Share the link</p>
+          <p class="rtm-item-desc">With guests, friends, and family</p>
+        </div>
+
+        <div class="rtm-item">
+          <span class="rtm-item-num">04</span>
+          <p class="rtm-item-title">Order prints</p>
+          <p class="rtm-item-desc">Through our recommended print partner (optional)</p>
+        </div>
+
+      </div>
+
+      <p class="rtm-expect-footnote">
+        Galleries stay live for <strong>12 months</strong> from your event date. If you'd like yours extended, just let us know.
+      </p>
+
+    </section>
+
+
+    <!-- ── 4. FOR GUESTS ──────────────────────────────────── -->
+    <section class="rtm-guests" aria-labelledby="guests-heading">
+      <div class="rtm-guests-inner">
+
+        <h4 class="eyebrow">For Guests</h4>
+        <h3 class="sub" id="guests-heading">Were you at <em>the</em> event?</h3>
+        <p>
+          If you're a guest looking for photos from a night you were at, you'll need the event date and access code from the host. Get in touch with whoever booked the event — they'll have it. Once you're in, every photo is free to download and share, no watermarks, no restrictions.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ── 5. PRIVACY ─────────────────────────────────────── -->
+    <section class="rtm-privacy" aria-labelledby="privacy-heading">
+      <div class="rtm-privacy-inner">
+
+        <h4 class="eyebrow">Privacy</h4>
+        <h3 class="sub" id="privacy-heading"><em>Your</em> photos, your privacy.</h3>
+        <p>
+          Every gallery is password-protected and only accessible to people with your event's unique access code. We'll never share your photos, publish them, or use them for marketing without asking you first — and if we ever do ask, it's only because something looked particularly beautiful and we wanted permission to share it.
+        </p>
+        <p>
+          If you'd like your gallery taken offline at any point, just email us and it's done.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ── 6. CLOSING CTA ─────────────────────────────────── -->
+    <section class="rtm-cta" aria-labelledby="rtm-cta-heading">
+
+      <p class="caption rtm-cta-eyebrow">Loved the Booth?</p>
+
+      <h2 class="display" id="rtm-cta-heading">Planning another event? Let's <em>run</em> it back.</h2>
+
+      <p class="body-large rtm-cta-sub">
+        Get in touch — we'd love to work with you again.
+      </p>
+
+      <div class="rtm-cta-btn">
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLScvFBTFEnlQPlzwT0hrluWl1DMIgVdIR8G33Qqr-a1yc_fSsA/viewform?usp=sharing&ouid=112035764752614889026"
+          class="btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Enquire Now</a>
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <img
+          src="brand_assets/moment-lab-primary.svg"
+          alt="Moment Lab"
+          class="footer-logo"
+        >
+        <p class="footer-tagline">Premium photobooth experiences across Newcastle &amp; the North East.</p>
+        <p class="footer-sub">Weddings · Corporate Events · Celebrations</p>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Explore</p>
+        <ul class="footer-links">
+          <li><a href="/the-studio.html">Our Booths</a></li>
+          <li><a href="/relive-the-moment.html">Relive the Moment</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/faqs.html">FAQs</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Get in Touch</p>
+        <div class="footer-contact-line">
+          <a href="mailto:hello@momentlab.co.uk">hello@momentlab.co.uk</a>
+          <a href="tel:+447345686762">+44 7345 686762</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://instagram.com/momentlab.co" target="_blank" rel="noopener noreferrer" aria-label="Moment Lab on Instagram">Instagram</a>
+          <a href="https://facebook.com/momentlab.co" target="_blank" rel="noopener noreferrer" aria-label="Moment Lab on Facebook">Facebook</a>
+          <a href="https://tiktok.com/@momentlab.co" target="_blank" rel="noopener noreferrer" aria-label="Moment Lab on TikTok">TikTok</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-legal">
+      <p class="footer-legal-copy">© Moment Lab 2026. All rights reserved.</p>
+      <ul class="footer-legal-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="/assets/main.js"></script>
+  <script>
+    document.getElementById('gallery-access-form')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      console.log('Gallery access form submitted', Object.fromEntries(new FormData(this)));
+    });
+  </script>
+
+</body>
+</html>

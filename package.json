@@ -1,0 +1,14 @@
+{
+  "name": "moment-lab",
+  "version": "0.1.0",
+  "description": "Moment Lab — premium photobooth website for Newcastle & the North East",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "node serve.mjs",
+    "screenshot": "node screenshot.mjs"
+  },
+  "devDependencies": {
+    "puppeteer": "^23.5.0"
+  }
+}

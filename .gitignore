@@ -1,0 +1,31 @@
+# Dependencies — never commit these
+node_modules/
+
+# Local screenshots — kept locally, not in repo
+temporary screenshots/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor junk
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Claude Code session data — local only, contains conversation history
+.claude/
+
+# One-off generator scripts that produced final assets
+og-image-render.html
+og-screenshot.mjs
+favicon-render.html
+favicon-png.mjs

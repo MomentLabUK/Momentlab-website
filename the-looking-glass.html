@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Looking Glass — Mirror Photobooth (Coming Soon) | Moment Lab</title>
+  <meta name="description" content="The Looking Glass — an interactive mirror photobooth coming soon to Moment Lab. Register your interest for early access and first-date availability.">
+
+  <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://momentlab.co.uk/the-looking-glass.html">
+  <meta property="og:title" content="The Looking Glass — Mirror Photobooth (Coming Soon) | Moment Lab">
+  <meta property="og:description" content="The Looking Glass — an interactive mirror photobooth coming soon to Moment Lab. Register your interest for early access and first-date availability.">
+  <meta property="og:image" content="https://momentlab.co.uk/og-image.jpg">
+  <meta property="og:site_name" content="Moment Lab">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://momentlab.co.uk/the-looking-glass.html">
+  <meta name="twitter:title" content="The Looking Glass — Mirror Photobooth (Coming Soon) | Moment Lab">
+  <meta name="twitter:description" content="The Looking Glass — an interactive mirror photobooth coming soon to Moment Lab. Register your interest for early access and first-date availability.">
+  <meta name="twitter:image" content="https://momentlab.co.uk/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/favicon-32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* ============================================================
+       The Looking Glass — page-specific styles
+       ============================================================ */
+
+    /* ── 1. HERO ──────────────────────────────────────────────── */
+    .lg-hero {
+      background: var(--obsidian);
+      position: relative;
+      overflow: hidden;
+      padding: 220px 8vw 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Atmospheric gilt radials */
+    .lg-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 110%, rgba(201,168,76,0.09) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 95% 15%, rgba(201,168,76,0.05) 0%, transparent 50%),
+        radial-gradient(ellipse 45% 40% at 5% 80%, rgba(201,168,76,0.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* Grain texture */
+    .lg-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+
+    .lg-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 60ch;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* "COMING SOON" — no gilt line, plain gilt text only */
+    .lg-coming-soon {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gilt);
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    .lg-hero h1.hero {
+      color: var(--bone);
+      margin-bottom: 40px;
+    }
+
+    .lg-hero p.lead {
+      color: var(--stone);
+      max-width: 40ch;
+      text-align: center;
+      margin: 0 auto 52px;
+    }
+
+    /* ── 2. FEATURE IMAGE ─────────────────────────────────────── */
+    .lg-image-section {
+      background: var(--bone);
+      padding: 100px 8vw 0;
+    }
+
+    .lg-image-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lg-booth-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Very subtle editorial gradient — just enough to feel finished */
+    .lg-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.08) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    /* ── 3. INTRO PROSE ───────────────────────────────────────── */
+    /* Continues directly from bone image section — no section break */
+    .lg-intro {
+      background: var(--bone);
+      padding: 0 8vw 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .lg-intro-inner {
+      max-width: 60ch;
+      margin: 0 auto;
+      padding-top: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lg-intro p.lead {
+      max-width: 40ch;
+      color: var(--obsidian);
+      text-align: center;
+      margin: 0 auto 40px;
+    }
+
+    .lg-intro-body {
+      max-width: 60ch;
+      text-align: center;
+    }
+
+    .lg-intro-body p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--smoke);
+      max-width: 60ch;
+      margin-bottom: 1.5em;
+    }
+
+    .lg-intro-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Pull-line: p.lead-style but smaller (~1.5rem) */
+    .lg-pull-line {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.25rem, 2vw, 1.5rem);
+      line-height: 1.45;
+      color: var(--obsidian);
+      max-width: 44ch;
+      margin: 0;
+    }
+
+    /* ── 4. THREE FEATURES ────────────────────────────────────── */
+    .lg-features-section {
+      background: var(--obsidian);
+      color: var(--bone);
+      padding: 120px 8vw 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Atmospheric accents */
+    .lg-features-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 100% 0%, rgba(201,168,76,0.05) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 40% at 0% 100%, rgba(201,168,76,0.03) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .lg-features-header {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+    }
+
+    .lg-features-header h2.display {
+      color: var(--bone);
+      margin-bottom: 24px;
+    }
+
+    .lg-features-header p.body-large {
+      color: var(--stone);
+      max-width: 60ch;
+      margin-bottom: 0;
+    }
+
+    /* Three-column editorial grid */
+    .lg-features-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      margin-top: 80px;
+    }
+
+    /* Horizontal gilt hairline — connects the numeral row visually */
+    .lg-features-grid::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: rgba(201, 168, 76, 0.2);
+      pointer-events: none;
+    }
+
+    .lg-feature-item {
+      padding-top: 48px;
+    }
+
+    .lg-feature-numeral {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(3rem, 4.5vw, 4rem);
+      line-height: 1;
+      color: var(--gilt);
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+      display: block;
+    }
+
+    .lg-feature-item h3.sub {
+      color: var(--bone);
+      font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+      margin-bottom: 16px;
+    }
+
+    .lg-feature-item p {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--stone);
+      max-width: 32ch;
+      margin-bottom: 0;
+    }
+
+    /* ── 5. ADD-ONS MENTION ───────────────────────────────────── */
+    /* Continues obsidian — no section break from features */
+    .lg-addons {
+      background: var(--obsidian);
+      padding: 0 8vw 120px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lg-addons-inner {
+      max-width: 50ch;
+      margin: 0 auto;
+      padding-top: 80px;
+    }
+
+    .lg-addons-eyebrow {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--stone);
+      display: block;
+      margin-bottom: 24px;
+    }
+
+    .lg-addons-text {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--bone);
+      max-width: 46ch;
+      margin: 0 auto;
+    }
+
+    /* ── 6. CLOSING CTA ───────────────────────────────────────── */
+    .lg-closing {
+      background: var(--bone);
+      padding: 140px 8vw 140px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lg-closing::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,168,76,0.04) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .lg-closing-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 62ch;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* EARLY ACCESS eyebrow — plain text, no line */
+    .lg-closing-eyebrow {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--stone);
+      display: block;
+      margin-bottom: 32px;
+    }
+
+    .lg-closing h2.display {
+      color: var(--obsidian);
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    .lg-closing p.body-large {
+      max-width: 54ch;
+      text-align: center;
+      color: var(--smoke);
+      margin-bottom: 0;
+    }
+
+    .lg-cta-wrap {
+      margin-top: 48px;
+    }
+
+    /* Secondary cross-link — quiet, gilt, hover underline only */
+    .lg-studio-link {
+      display: inline-block;
+      margin-top: 64px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--gilt);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+      transition: color 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+                  border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .lg-studio-link:hover {
+      color: var(--gilt-soft);
+      border-bottom-color: var(--gilt-soft);
+    }
+
+    .lg-studio-link:focus-visible {
+      outline: 2px solid var(--gilt);
+      outline-offset: 4px;
+      border-radius: 1px;
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 767px) {
+      .lg-hero {
+        padding: 160px 6vw 64px;
+      }
+
+      .lg-hero p.lead {
+        max-width: 36ch;
+      }
+
+      .lg-image-section {
+        padding: 72px 6vw 0;
+      }
+
+      .lg-intro {
+        padding: 0 6vw 80px;
+      }
+
+      .lg-intro-inner {
+        padding-top: 64px;
+      }
+
+      .lg-features-section {
+        padding: 80px 6vw 0;
+      }
+
+      /* Stack on mobile — single column */
+      .lg-features-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-top: 48px;
+      }
+
+      .lg-features-grid::before {
+        display: none;
+      }
+
+      .lg-feature-item {
+        padding: 40px 0;
+        border-top: 1px solid rgba(201, 168, 76, 0.15);
+      }
+
+      .lg-feature-item:first-child {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .lg-feature-item p {
+        max-width: 52ch;
+      }
+
+      .lg-addons {
+        padding: 0 6vw 80px;
+      }
+
+      .lg-addons-inner {
+        padding-top: 64px;
+      }
+
+      .lg-closing {
+        padding: 100px 6vw 100px;
+      }
+    }
+
+    /* Tablet — keep 3 columns down to 768px, stack below */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .lg-hero {
+        padding: 190px 6vw 80px;
+      }
+
+      .lg-image-section {
+        padding: 80px 6vw 0;
+      }
+
+      .lg-intro {
+        padding: 0 6vw 100px;
+      }
+
+      .lg-features-section {
+        padding: 100px 6vw 0;
+      }
+
+      .lg-features-grid {
+        gap: 32px;
+      }
+
+      .lg-addons {
+        padding: 0 6vw 100px;
+      }
+
+      .lg-closing {
+        padding: 120px 6vw 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="site-nav" role="banner">
+    <div class="nav-inner">
+
+      <a href="/" class="nav-logo" aria-label="Moment Lab — home">
+        <img src="brand_assets/moment-lab-primary.svg" alt="Moment Lab">
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li class="nav-dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">
+              Our Booths
+              <span class="chevron" aria-hidden="true"></span>
+            </a>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="/the-studio.html" role="menuitem">The Studio</a>
+              <a href="/the-looking-glass.html" role="menuitem">
+                The Looking Glass
+                <span class="nav-soon-badge">Coming Soon</span>
+              </a>
+            </div>
+          </li>
+          <li><a href="/relive-the-moment.html">Relive the Moment</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/faqs.html">FAQs</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScvFBTFEnlQPlzwT0hrluWl1DMIgVdIR8G33Qqr-a1yc_fSsA/viewform?usp=sharing&ouid=112035764752614889026" class="btn-primary" target="_blank" rel="noopener noreferrer">Enquire Now</a>
+      </div>
+
+      <button
+        class="nav-hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+    <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile navigation">
+      <a href="/the-studio.html">The Studio</a>
+      <a href="/the-looking-glass.html">
+        The Looking Glass
+        <span class="soon">Coming Soon</span>
+      </a>
+      <a href="/relive-the-moment.html">Relive the Moment</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/faqs.html">FAQs</a>
+      <a href="/contact.html">Contact</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScvFBTFEnlQPlzwT0hrluWl1DMIgVdIR8G33Qqr-a1yc_fSsA/viewform?usp=sharing&ouid=112035764752614889026" class="btn-primary mobile-cta" target="_blank" rel="noopener noreferrer">Enquire Now</a>
+    </nav>
+  </header>
+
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- ── 1. HERO ─────────────────────────────────────────── -->
+    <section class="lg-hero" aria-label="Hero">
+      <div class="lg-hero-inner reveal">
+
+        <span class="lg-coming-soon" aria-label="Coming soon">Coming Soon</span>
+
+        <h1 class="hero">
+          The <em>Looking Glass</em>.
+        </h1>
+
+        <p class="lead">
+          A photobooth, reimagined as an experience.
+        </p>
+
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSe5gOkr71DpDoNCNWsZOIp3XHal5wCzaSuLAdZ8k4qwqQ0K3Q/viewform?usp=sharing&ouid=112035764752614889026"
+          class="btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Register Your Interest</a>
+
+      </div>
+    </section>
+
+
+    <!-- ── 2. FEATURE IMAGE ────────────────────────────────── -->
+    <section class="lg-image-section" aria-label="The Looking Glass booth">
+      <div class="lg-image-container">
+        <img
+          src="media_assets/looking-glass-booth.png"
+          alt="The Looking Glass — a full-length interactive mirror booth in a warm wooden frame"
+          class="lg-booth-image"
+          loading="eager"
+        >
+        <div class="lg-image-overlay" aria-hidden="true"></div>
+      </div>
+    </section>
+
+
+    <!-- ── 3. INTRO PROSE ──────────────────────────────────── -->
+    <!-- Bone continues directly from image section — no visual break -->
+    <section class="lg-intro" aria-label="Introduction">
+      <div class="lg-intro-inner">
+
+        <p class="lead">Something special is on its way.</p>
+
+        <div class="lg-intro-body">
+          <p>
+            The Looking Glass is our next chapter — a full-length interactive mirror booth
+            wrapped in a vintage-inspired wooden frame. It doesn't just take photos.
+            It invites guests into a moment.
+          </p>
+          <p>
+            Touch the mirror. Follow the prompts. Watch the glass respond as it guides
+            you through the perfect shot. Then — a beautifully printed keepsake, seconds later.
+          </p>
+          <p class="lg-pull-line">
+            Part photobooth. Part performance. Entirely unforgettable.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── 4. THREE FEATURES + 5. ADD-ONS (obsidian — no break) ── -->
+    <section class="lg-features-section" aria-label="Why The Looking Glass is different">
+
+      <div class="lg-features-header">
+        <h2 class="display">Why it's <em>different</em>.</h2>
+        <p class="body-large">
+          Everything you'd expect from Moment Lab — with an experience layered on top.
+        </p>
+      </div>
+
+      <div class="lg-features-grid" role="list">
+
+        <div class="lg-feature-item" role="listitem">
+          <span class="lg-feature-numeral" aria-hidden="true">01</span>
+          <h3 class="sub">A Full-Length Mirror</h3>
+          <p>
+            A stunning, interactive centrepiece — the kind of piece that draws guests across
+            the room before they've even understood what it does. Wrapped in a warm,
+            vintage-inspired wooden frame that belongs in any venue.
+          </p>
+        </div>
+
+        <div class="lg-feature-item" role="listitem">
+          <span class="lg-feature-numeral" aria-hidden="true">02</span>
+          <h3 class="sub">Interactive Touchscreen</h3>
+          <p>
+            Guests tap the mirror, follow the prompts, and watch the glass respond.
+            The booth guides them through the perfect shot — so every photo feels
+            considered, not rushed.
+          </p>
+        </div>
+
+        <div class="lg-feature-item" role="listitem">
+          <span class="lg-feature-numeral" aria-hidden="true">03</span>
+          <h3 class="sub">An Invitation, Not Just a Photo</h3>
+          <p>
+            The mirror reflects. The screen responds. The keepsake arrives in seconds.
+            It's not a photobooth — it's a moment your guests step into,
+            and remember long after.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ── 5. ADD-ONS MENTION ──────────────────────────────── -->
+    <!-- Continues obsidian — no section break -->
+    <div class="lg-addons" aria-label="Add-ons">
+      <div class="lg-addons-inner">
+        <span class="lg-addons-eyebrow">And add-ons to make it yours</span>
+        <p class="lg-addons-text">
+          Customisable decals, monograms, and bespoke touches —
+          available as add-ons when you register interest.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- ── 6. CLOSING CTA ──────────────────────────────────── -->
+    <section class="lg-closing" aria-label="Register your interest">
+      <div class="lg-closing-inner">
+
+        <span class="lg-closing-eyebrow">Early Access</span>
+
+        <h2 class="display">The Looking Glass <em>lands</em> soon.</h2>
+
+        <p class="body-large">
+          A small number of dates will be available ahead of the public launch.
+          Register your interest and we'll be in touch the moment bookings open —
+          with first access to your preferred date.
+        </p>
+
+        <div class="lg-cta-wrap">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSe5gOkr71DpDoNCNWsZOIp3XHal5wCzaSuLAdZ8k4qwqQ0K3Q/viewform?usp=sharing&ouid=112035764752614889026"
+            class="btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Register Your Interest</a>
+        </div>
+
+        <a href="/the-studio.html" class="lg-studio-link">
+          In the meantime — meet The Studio &rarr;
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <img
+          src="brand_assets/moment-lab-primary.svg"
+          alt="Moment Lab"
+          class="footer-logo"
+        >
+        <p class="footer-tagline">Premium photobooth experiences across Newcastle &amp; the North East.</p>
+        <p class="footer-sub">Weddings · Corporate Events · Celebrations</p>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Explore</p>
+        <ul class="footer-links">
+          <li><a href="/the-studio.html">Our Booths</a></li>
+          <li><a href="/relive-the-moment.html">Relive the Moment</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/faqs.html">FAQs</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Get in Touch</p>
+        <div class="footer-contact-line">
+          <a href="mailto:hello@momentlab.co.uk">hello@momentlab.co.uk</a>
+          <a href="tel:+447345686762">+44 7345 686762</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://instagram.com/momentlab.co" target="_blank" rel="noopener noreferrer" aria-label="Moment Lab on Instagram">Instagram</a>
+          <a href="https://facebook.com/momentlab.co" target="_blank" rel="noopener noreferrer" aria-label="Moment Lab on Facebook">Facebook</a>
+          <a href="https://tiktok.com/@momentlab.co" target="_blank" rel="noopener noreferrer" aria-label="Moment Lab on TikTok">TikTok</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-legal">
+      <p class="footer-legal-copy">© Moment Lab 2026. All rights reserved.</p>
+      <ul class="footer-legal-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="/assets/main.js"></script>
+
+</body>
+</html>

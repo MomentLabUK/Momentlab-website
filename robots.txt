@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://momentlab.co.uk/sitemap.xml
