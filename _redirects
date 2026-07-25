@@ -2,3 +2,4 @@
 /blog /journal 301
 /blog/* /journal 301
 /the-studio /our-booths/the-studio 301
+/experiences/corporate-headshots /experiences/professional-headshots 301
