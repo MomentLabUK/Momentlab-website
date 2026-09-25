@@ -150,6 +150,9 @@ nav.main li:hover .drop{opacity:1;visibility:visible;transform:translateX(-50%) 
 /* hero */
 .hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden}
 .hero-media{position:absolute;inset:0;z-index:0}
+.fimg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 50%)}
+@media(max-width:820px){.fimg{object-position:var(--pos-m,var(--pos,50% 50%))}}
+@supports not (aspect-ratio:1/1){.fmedia{height:0;padding-bottom:125%}@media(max-width:820px){.fmedia{padding-bottom:66.67%}}}
 .hero-media::before{content:"";position:absolute;inset:0;
   background:
     radial-gradient(120% 90% at 78% 18%,rgba(201,168,76,.20),transparent 55%),
@@ -206,11 +209,11 @@ section{padding:clamp(70px,9vw,120px) 0}
 .exgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .excard{position:relative;aspect-ratio:3/4;border:1px solid var(--line);overflow:hidden;display:flex;align-items:flex-end}
 .excard .exbg{position:absolute;inset:0;transition:.7s ease}
+.ex-heads{background:linear-gradient(180deg,rgba(10,10,10,.04) 0%,rgba(10,10,10,.22) 32%,rgba(10,10,10,.84) 58%,rgba(10,10,10,.96) 100%),url('/assets/corporate-events/professional-headshots-photo-booth-newcastle.webp') center/cover}
+.ex-holiday{background:linear-gradient(180deg,rgba(10,10,10,.04) 0%,rgba(10,10,10,.22) 32%,rgba(10,10,10,.84) 58%,rgba(10,10,10,.96) 100%),url('/assets/corporate-events/holiday-photo-booth-newcastle.webp') center/cover}
+.ex-mosaic{background:linear-gradient(180deg,rgba(10,10,10,.04) 0%,rgba(10,10,10,.22) 32%,rgba(10,10,10,.84) 58%,rgba(10,10,10,.96) 100%),url('/assets/private-events/mosaic-photo-booth-newcastle.webp') 58% center/cover}
+.ex-glamour{background:linear-gradient(180deg,rgba(10,10,10,.04) 0%,rgba(10,10,10,.22) 32%,rgba(10,10,10,.84) 58%,rgba(10,10,10,.96) 100%),url('/assets/home/glam-photo-booth-newcastle.webp') center/cover}
 .excard:hover .exbg{transform:scale(1.06)}
-.ex-glam{background:linear-gradient(180deg,rgba(10,10,10,.1),rgba(10,10,10,.9)),radial-gradient(80% 60% at 50% 25%,rgba(201,168,76,.22),transparent),linear-gradient(160deg,#211a10,#0a0a0a)}
-.ex-spot{background:linear-gradient(180deg,rgba(10,10,10,.1),rgba(10,10,10,.9)),radial-gradient(70% 55% at 50% 22%,rgba(220,189,110,.20),transparent),linear-gradient(160deg,#1a1712,#0a0a0a)}
-.ex-mag{background:linear-gradient(180deg,rgba(10,10,10,.1),rgba(10,10,10,.9)),radial-gradient(80% 60% at 60% 30%,rgba(160,120,60,.24),transparent),linear-gradient(160deg,#1d1810,#0a0a0a)}
-.ex-mos{background:linear-gradient(180deg,rgba(10,10,10,.1),rgba(10,10,10,.9)),radial-gradient(80% 60% at 40% 28%,rgba(201,168,76,.18),transparent),linear-gradient(160deg,#17130d,#0a0a0a)}
 .excard .exin{position:relative;z-index:2;padding:26px 22px;width:100%}
 .excard .exin h3{font-size:1.35rem;margin-bottom:6px}
 .excard .exin p{font-size:.85rem;color:var(--bone-dim);margin-bottom:14px}
@@ -407,7 +410,7 @@ section.feature{display:block}
       <p>It also earns its keep after the event. Every capture is branded content created live, ready for your channels while the moment is still current, and a keepsake in your audience&rsquo;s hands that carries your name well beyond the day.</p>
     </div>
     <div class="fmedia rv" data-d="1">
-      <div class="ph ph-1"><span class="lab">The Studio at a corporate activation</span></div>
+      <img class="fimg" src="/assets/corporate-events/corporate-event-photo-booth-studio.webp" width="1100" height="1349" style="--pos:50% 30%;--pos-m:50% 12%" alt="Photo booth fully wrapped in client branding, set in front of a matching branded backdrop" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -445,7 +448,7 @@ section.feature{display:block}
       <p>Branded content created live. Social-ready moments your audience will actually post. Professional headshots for team builds. And activation impact that lasts well beyond the day.</p>
     </div>
     <div class="fmedia rv" data-d="1">
-      <div class="ph ph-2"><span class="lab">Attendees at a branded activation</span></div>
+      <img class="fimg" src="/assets/corporate-events/corporate-event-photo-booth-attendees.webp" width="999" height="1498" style="--pos:50% 20%;--pos-m:50% 28%" alt="A group of attendees with drinks laughing together at the photo booth" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -461,7 +464,7 @@ section.feature{display:block}
       <a class="txtlink" href="/experiences">See How We Style Each Experience &rarr;</a>
     </div>
     <div class="fmedia rv" data-d="1">
-      <div class="ph ph-3"><span class="lab">Branded backdrop and print design</span></div>
+      <img class="fimg" src="/assets/corporate-events/corporate-event-photo-booth-backdrop-print.webp" width="1600" height="1066" style="--pos:50% 50%" alt="An attendee holding a branded photo booth print in front of the event backdrop" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -487,19 +490,19 @@ section.feature{display:block}
     </div>
     <div class="exgrid rv">
       <a class="excard" href="/experiences/professional-headshots">
-        <div class="exbg ex-spot"></div>
+        <div class="exbg ex-heads" role="img" aria-label="Two guests holding their professional headshot prints"></div>
         <div class="exin"><h3>Professional Headshots</h3><p>Studio-quality headshots for the whole team, captured on the day.</p><span class="txtlink">Learn More &rarr;</span></div>
       </a>
       <a class="excard" href="/experiences/holiday">
-        <div class="exbg ex-glam"></div>
+        <div class="exbg ex-holiday" role="img" aria-label="A festive newspaper-style front page on the photo booth screen"></div>
         <div class="exin"><h3>Holiday</h3><p>Seasonal themes styled to suit your end of the year and holiday events.</p><span class="txtlink">Learn More &rarr;</span></div>
       </a>
       <a class="excard" href="/experiences/mosaic">
-        <div class="exbg ex-mag"></div>
+        <div class="exbg ex-mosaic" role="img" aria-label="A guest holding a finished photo mosaic built from portraits taken on the night"></div>
         <div class="exin"><h3>Mosaic</h3><p>Every capture builds into one branded piece your team can keep.</p><span class="txtlink">Learn More &rarr;</span></div>
       </a>
       <a class="excard" href="/experiences/glam">
-        <div class="exbg ex-mos"></div>
+        <div class="exbg ex-glamour" role="img" aria-label="A black and white Glam photo booth portrait"></div>
         <div class="exin"><h3>Glam</h3><p>Black and white, soft focus, a polished finish that flatters everyone.</p><span class="txtlink">Learn More &rarr;</span></div>
       </a>
     </div>
