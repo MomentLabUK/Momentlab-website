@@ -319,6 +319,12 @@ section p{max-width:66ch}
 .media--square{aspect-ratio:1/1}
 .media--keep{aspect-ratio:3/2}
 .media--showcase{aspect-ratio:16/9}
+.photo{position:relative;width:100%;overflow:hidden;background:#141414}
+.photo--square{aspect-ratio:1/1}
+.photo--portrait{aspect-ratio:4/5}
+.photo--keep{aspect-ratio:3/2}
+.photo img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
+@supports not (aspect-ratio:1/1){.photo--square{height:0;padding-bottom:100%}.photo--portrait{height:0;padding-bottom:125%}.photo--keep{height:0;padding-bottom:66.67%}}
 .yt{position:relative;height:0;padding-bottom:56.25%;background:#000;cursor:pointer;overflow:hidden}
 .yt img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.88;transition:opacity .4s ease,transform .6s ease}
 .yt:hover img{opacity:1;transform:scale(1.015)}
@@ -474,10 +480,7 @@ section p{max-width:66ch}
       <p>The result flatters everyone and dates well, made in seconds and printed to keep. Understated, and all the stronger for it.</p>
     </div>
     <div class="col-media">
-      <div class="media media--square">
-        <span class="media__tag">Media</span>
-        <span class="media__label"><strong>Portrait study</strong>1:1 &middot; 1400&times;1400 &middot; WebP<br>One dramatic studio portrait</span>
-      </div>
+      <div class="photo photo--square"><img src="/assets/experiences/spotlight-photo-booth-portrait-north-east.webp" width="1200" height="1800" style="object-position:50% 40%" alt="A couple embracing inside a circle of studio spotlight" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
@@ -491,10 +494,7 @@ section p{max-width:66ch}
     </div>
     <div class="split" style="margin-top:44px">
       <div class="col-media">
-        <div class="media media--wide">
-          <span class="media__tag">Media</span>
-          <span class="media__label"><strong>In the light</strong>16:9 &middot; 1600&times;900 &middot; WebP<br>Guest under the studio light</span>
-        </div>
+        <div class="photo photo--portrait"><img src="/assets/experiences/spotlight-photo-booth-event-newcastle.webp" width="1200" height="1800" style="object-position:50% 45%" alt="Guests toasting with champagne while holding their black and white Spotlight photo strips" loading="lazy" decoding="async"></div>
       </div>
       <div class="col-text">
         <p>Your guest steps up to the booth and the light finds them. We guide the pose, capture the frame, and the portrait appears on screen moments later.</p>
@@ -514,10 +514,7 @@ section p{max-width:66ch}
       <p>After the event, the full gallery reaches the host in full resolution, ready to keep for good.</p>
     </div>
     <div class="col-media">
-      <div class="media media--keep">
-        <span class="media__tag">Media</span>
-        <span class="media__label"><strong>Keepsake detail</strong>3:2 &middot; 1500&times;1000 &middot; WebP<br>Portrait in hand, digital on phone</span>
-      </div>
+      <div class="photo photo--keep"><img src="/assets/experiences/spotlight-photo-booth-print-keepsake.webp" width="1200" height="1800" style="object-position:50% 21%" alt="A black and white Spotlight portrait worn as a keyring on a red handbag" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
