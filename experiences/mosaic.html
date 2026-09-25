@@ -319,6 +319,12 @@ section p{max-width:66ch}
 .media--square{aspect-ratio:1/1}
 .media--keep{aspect-ratio:3/2}
 .media--showcase{aspect-ratio:16/9}
+.photo{position:relative;width:100%;overflow:hidden;background:#141414}
+.photo--square{aspect-ratio:1/1}
+.photo--wide{aspect-ratio:16/9}
+.photo--keep{aspect-ratio:3/2}
+.photo img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
+@supports not (aspect-ratio:1/1){.photo--square{height:0;padding-bottom:100%}.photo--wide{height:0;padding-bottom:56.25%}.photo--keep{height:0;padding-bottom:66.67%}}
 .yt{position:relative;height:0;padding-bottom:56.25%;background:#000;cursor:pointer;overflow:hidden}
 .yt img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.88;transition:opacity .4s ease,transform .6s ease}
 .yt:hover img{opacity:1;transform:scale(1.015)}
@@ -474,10 +480,7 @@ section p{max-width:66ch}
       <p>Everyone wants to add their tile, everyone watches it build, and the finished mosaic prints as a keepsake for the host and shares as a digital for the room.</p>
     </div>
     <div class="col-media">
-      <div class="media media--square">
-        <span class="media__tag">Media</span>
-        <span class="media__label"><strong>Mosaic reveal</strong>1:1 &middot; 1400&times;1400 &middot; WebP<br>The finished mosaic, built from portraits</span>
-      </div>
+      <div class="photo photo--square"><img src="/assets/experiences/mosaic-photo-booth-keepsake.webp" width="1800" height="1200" style="object-position:62% 50%" alt="A guest holding a finished photo mosaic built from portraits taken on the night" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
@@ -491,10 +494,7 @@ section p{max-width:66ch}
     </div>
     <div class="split" style="margin-top:44px">
       <div class="col-media">
-        <div class="media media--wide">
-          <span class="media__tag">Media</span>
-          <span class="media__label"><strong>The live reveal</strong>16:9 &middot; 1600&times;900 &middot; WebP<br>The mosaic building on screen</span>
-        </div>
+        <div class="photo photo--wide"><img src="/assets/experiences/mosaic-photo-booth-reveal-north-east.webp" width="1063" height="624" alt="A digital wedding mosaic of a bride and groom, made from hundreds of guest portraits" loading="lazy" decoding="async"></div>
       </div>
       <div class="col-text">
         <p>Your guest steps up to the booth, the frame is captured, and their portrait drops into the growing mosaic on the live screen. A printed keepsake follows in seconds.</p>
@@ -514,10 +514,7 @@ section p{max-width:66ch}
       <p>The host keeps the finished mosaic, delivered in full resolution after the event, ready to print large or share with the room.</p>
     </div>
     <div class="col-media">
-      <div class="media media--keep">
-        <span class="media__tag">Media</span>
-        <span class="media__label"><strong>Keepsake detail</strong>3:2 &middot; 1500&times;1000 &middot; WebP<br>A portrait tile and the full mosaic</span>
-      </div>
+      <div class="photo photo--keep"><img src="/assets/experiences/mosaic-photo-booth-event-newcastle.webp" width="1200" height="1800" style="object-position:50% 50%" alt="A guest placing her portrait tile onto the photo mosaic board" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
