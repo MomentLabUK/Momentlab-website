@@ -319,6 +319,11 @@ section p{max-width:66ch}
 .media--square{aspect-ratio:1/1}
 .media--keep{aspect-ratio:3/2}
 .media--showcase{aspect-ratio:16/9}
+.photo{position:relative;width:100%;overflow:hidden;background:#141414}
+.photo--square{aspect-ratio:1/1}
+.photo--keep{aspect-ratio:3/2}
+.photo img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
+@supports not (aspect-ratio:1/1){.photo--square{height:0;padding-bottom:100%}.photo--keep{height:0;padding-bottom:66.67%}}
 .yt{position:relative;height:0;padding-bottom:56.25%;background:#000;cursor:pointer;overflow:hidden}
 .yt img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.88;transition:opacity .4s ease,transform .6s ease}
 .yt:hover img{opacity:1;transform:scale(1.015)}
@@ -475,10 +480,7 @@ section p{max-width:66ch}
       <p>We retouch each frame to a natural, professional finish and deliver them ready for LinkedIn, the website, the staff directory or the press release. Consistent, current, and done in a day.</p>
     </div>
     <div class="col-media">
-      <div class="media media--square">
-        <span class="media__tag">Media</span>
-        <span class="media__label"><strong>Consistency grid</strong>1:1 &middot; 1400&times;1400 &middot; WebP<br>A set of matching team headshots</span>
-      </div>
+      <div class="photo photo--square"><img src="/assets/experiences/professional-headshots-team-north-east.webp" width="1800" height="1200" style="object-position:50% 50%" alt="Two team members holding their finished professional headshot prints" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
@@ -492,10 +494,7 @@ section p{max-width:66ch}
     </div>
     <div class="split" style="margin-top:44px">
       <div class="col-media">
-        <div class="media media--wide">
-          <span class="media__tag">Media</span>
-          <span class="media__label"><strong>Setup on site</strong>16:9 &middot; 1600&times;900 &middot; WebP<br>The headshot station at a venue</span>
-        </div>
+        <div class="photo photo--keep"><img src="/assets/experiences/professional-headshots-on-site-newcastle.webp" width="1600" height="1319" style="object-position:50% 38%" alt="Two attendees holding branded event passes printed with their headshots, in front of the company backdrop" loading="lazy" decoding="async"></div>
       </div>
       <div class="col-text">
         <p>Your people step up between meetings or sessions, no booking required. We capture a few frames, guide the pose and check the shot on the spot.</p>
@@ -515,10 +514,7 @@ section p{max-width:66ch}
       <p>The full set reaches you as an organised gallery, named and ready to hand to your team.</p>
     </div>
     <div class="col-media">
-      <div class="media media--keep">
-        <span class="media__tag">Media</span>
-        <span class="media__label"><strong>Delivered gallery</strong>3:2 &middot; 1500&times;1000 &middot; WebP<br>The finished set, ready to use</span>
-      </div>
+      <div class="photo photo--keep"><img src="/assets/experiences/professional-headshots-gallery.webp" width="1500" height="1000" alt="A finished professional headshot shown on a phone" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
