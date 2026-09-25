@@ -319,6 +319,12 @@ section p{max-width:66ch}
 .media--square{aspect-ratio:1/1}
 .media--keep{aspect-ratio:3/2}
 .media--showcase{aspect-ratio:16/9}
+.photo{position:relative;width:100%;overflow:hidden;background:#141414}
+.photo--square{aspect-ratio:1/1}
+.photo--portrait{aspect-ratio:4/5}
+.photo--keep{aspect-ratio:3/2}
+.photo img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
+@supports not (aspect-ratio:1/1){.photo--square{height:0;padding-bottom:100%}.photo--portrait{height:0;padding-bottom:125%}.photo--keep{height:0;padding-bottom:66.67%}}
 .yt{position:relative;height:0;padding-bottom:56.25%;background:#000;cursor:pointer;overflow:hidden}
 .yt img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.88;transition:opacity .4s ease,transform .6s ease}
 .yt:hover img{opacity:1;transform:scale(1.015)}
@@ -474,10 +480,7 @@ section p{max-width:66ch}
       <p>It suits everyone, photographs beautifully, and prints in seconds. The look that gets the longest queue of the evening.</p>
     </div>
     <div class="col-media">
-      <div class="media media--square">
-        <span class="media__tag">Media</span>
-        <span class="media__label"><strong>Glam showcase</strong>1:1 &middot; 1400&times;1400 &middot; WebP<br>Two or three black-and-white portraits</span>
-      </div>
+      <div class="photo photo--square"><img src="/assets/experiences/glam-photo-booth-black-and-white-north-east.webp" width="1067" height="1600" style="object-position:50% 62%" alt="Black and white Glam photo booth portraits of a couple, laid out with champagne and dessert" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
@@ -491,10 +494,7 @@ section p{max-width:66ch}
     </div>
     <div class="split" style="margin-top:44px">
       <div class="col-media">
-        <div class="media media--wide">
-          <span class="media__tag">Media</span>
-          <span class="media__label"><strong>Glam in the room</strong>16:9 &middot; 1600&times;900 &middot; WebP<br>Guest at the booth, mid-experience</span>
-        </div>
+        <div class="photo photo--portrait"><img src="/assets/experiences/glam-photo-booth-wedding-newcastle.webp" width="1100" height="1650" style="object-position:50% 40%" alt="A black and white Glam portrait of a bride and her bridesmaids on the photo booth screen" loading="lazy" decoding="async"></div>
       </div>
       <div class="col-text">
         <p>Your guest steps up to the booth, the light softens, and we guide the pose. The black-and-white portrait appears on screen moments later.</p>
@@ -514,10 +514,7 @@ section p{max-width:66ch}
       <p>After the event, the full gallery reaches the host in full resolution, ready to keep for good.</p>
     </div>
     <div class="col-media">
-      <div class="media media--keep">
-        <span class="media__tag">Media</span>
-        <span class="media__label"><strong>Keepsake detail</strong>3:2 &middot; 1500&times;1000 &middot; WebP<br>Print in hand, digital on phone</span>
-      </div>
+      <div class="photo photo--keep"><img src="/assets/experiences/glam-photo-booth-print-keepsake.webp" width="1200" height="1800" style="object-position:50% 57%" alt="A guest holding her Glam print beside the same portrait on her phone" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
