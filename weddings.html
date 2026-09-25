@@ -212,10 +212,11 @@ section{padding:clamp(70px,9vw,120px) 0}
 .excard{position:relative;aspect-ratio:3/4;border:1px solid var(--line);overflow:hidden;display:flex;align-items:flex-end}
 .excard .exbg{position:absolute;inset:0;transition:.7s ease}
 .excard:hover .exbg{transform:scale(1.06)}
-.ex-glam{background:linear-gradient(180deg,rgba(10,10,10,.1),rgba(10,10,10,.9)),radial-gradient(80% 60% at 50% 25%,rgba(201,168,76,.22),transparent),linear-gradient(160deg,#211a10,#0a0a0a)}
-.ex-spot{background:linear-gradient(180deg,rgba(10,10,10,.1),rgba(10,10,10,.9)),radial-gradient(70% 55% at 50% 22%,rgba(220,189,110,.20),transparent),linear-gradient(160deg,#1a1712,#0a0a0a)}
-.ex-mag{background:linear-gradient(180deg,rgba(10,10,10,.1),rgba(10,10,10,.9)),radial-gradient(80% 60% at 60% 30%,rgba(160,120,60,.24),transparent),linear-gradient(160deg,#1d1810,#0a0a0a)}
+.ex-glam{background:linear-gradient(180deg,rgba(10,10,10,.04) 0%,rgba(10,10,10,.22) 32%,rgba(10,10,10,.84) 58%,rgba(10,10,10,.96) 100%),url('/assets/home/glam-photo-booth-newcastle.webp') center/cover}
+.ex-spot{background:linear-gradient(180deg,rgba(10,10,10,.04) 0%,rgba(10,10,10,.22) 32%,rgba(10,10,10,.84) 58%,rgba(10,10,10,.96) 100%),url('/assets/home/spotlight-photo-booth-newcastle.webp') center/cover}
+.ex-mag{background:linear-gradient(180deg,rgba(10,10,10,.04) 0%,rgba(10,10,10,.22) 32%,rgba(10,10,10,.84) 58%,rgba(10,10,10,.96) 100%),url('/assets/home/magazine-photo-booth-newcastle.webp') center/cover}
 .ex-mos{background:linear-gradient(180deg,rgba(10,10,10,.1),rgba(10,10,10,.9)),radial-gradient(80% 60% at 40% 28%,rgba(201,168,76,.18),transparent),linear-gradient(160deg,#17130d,#0a0a0a)}
+.ex-news{background:linear-gradient(180deg,rgba(10,10,10,.04) 0%,rgba(10,10,10,.22) 32%,rgba(10,10,10,.84) 58%,rgba(10,10,10,.96) 100%),url('/assets/weddings/newspaper-photo-booth-print-keepsake.webp') center 100%/cover}
 .excard .exin{position:relative;z-index:2;padding:26px 22px;width:100%}
 .excard .exin h3{font-size:1.35rem;margin-bottom:6px}
 .excard .exin p{font-size:.85rem;color:var(--bone-dim);margin-bottom:14px}
@@ -461,19 +462,19 @@ section.feature{display:block}
     </div>
     <div class="exgrid rv">
       <a class="excard" href="/experiences/glam">
-        <div class="exbg ex-glam"></div>
+        <div class="exbg ex-glam" role="img" aria-label="A black and white Glam photo booth portrait"></div>
         <div class="exin"><h3>Glam</h3><p>Black and white, soft focus, a red-carpet finish that flatters everyone.</p><span class="txtlink">Learn More &rarr;</span></div>
       </a>
       <a class="excard" href="/experiences/spotlight">
-        <div class="exbg ex-spot"></div>
+        <div class="exbg ex-spot" role="img" aria-label="A studio-lit Spotlight photo booth portrait"></div>
         <div class="exin"><h3>Spotlight</h3><p>Studio-lit portraits that make each guest the picture.</p><span class="txtlink">Learn More &rarr;</span></div>
       </a>
       <a class="excard" href="/experiences/magazine">
-        <div class="exbg ex-mag"></div>
+        <div class="exbg ex-mag" role="img" aria-label="A Magazine photo booth cover"></div>
         <div class="exin"><h3>Magazine</h3><p>Cover-worthy prints styled like an editorial shoot.</p><span class="txtlink">Learn More &rarr;</span></div>
       </a>
       <a class="excard" href="/experiences/newspaper">
-        <div class="exbg ex-mos"></div>
+        <div class="exbg ex-news" role="img" aria-label="A guest holding up a newspaper-style photo booth front page on her phone"></div>
         <div class="exin"><h3>Newspaper</h3><p>Front-page prints that turn the day into the headline.</p><span class="txtlink">Learn More &rarr;</span></div>
       </a>
     </div>
