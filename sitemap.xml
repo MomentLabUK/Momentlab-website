@@ -162,7 +162,12 @@
   </url>
   <url>
     <loc>https://momentlab.co.uk/journal</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <priority>0.6</priority>
   </url>
-</urlset>
+  <url>
+    <loc>https://momentlab.co.uk/journal/why-businesses-in-newcastle-are-rethinking-festive-events-2026</loc>
+    <lastmod>2026-10-01</lastmod>
+    <priority>0.7</priority>
+  </url>
+  </urlset>
