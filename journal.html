@@ -349,7 +349,8 @@ section p{max-width:66ch}
 .fpost{display:grid;grid-template-columns:1.15fr 1fr;border:1px solid var(--hair);background:var(--smoke);margin-top:44px;transition:border-color .3s}
 .fpost:hover{border-color:var(--gilt)}
 .fpost__media{min-height:340px;background:radial-gradient(120% 90% at 70% 20%,rgba(201,168,76,.18),transparent 55%),linear-gradient(160deg,#1c1710,#0c0c0c)}
-.fpost__media img{width:100%;height:100%;object-fit:cover}
+.fpost__media{position:relative;overflow:hidden}
+.fpost__media img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
 .fpost__body{padding:clamp(30px,4vw,54px);display:flex;flex-direction:column;justify-content:center}
 .fpost__meta{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gilt);margin-bottom:18px}
 .fpost h3{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;line-height:1.15;margin-bottom:16px}
@@ -429,8 +430,7 @@ section p{max-width:66ch}
       <h2>Latest from The Journal</h2>
     </div>
     <a class="fpost" href="/journal/why-businesses-in-newcastle-are-rethinking-festive-events-2026">
-      <!-- Featured image: replace the div below with <img src="/assets/journal/YOUR-SEO-FILENAME.jpg" alt="Describe the image" loading="lazy"> -->
-      <div class="fpost__media" role="img" aria-label="Guests gathered around a festive photo experience at a Christmas celebration in Newcastle"></div>
+      <div class="fpost__media"><img src="/assets/journal/hero-why-businesses-in-newcastle-are-rethinking-festive-events-960.webp" width="960" height="640" style="object-position:50% 20%" alt="A guest holding a clear photo bauble with her portrait inside" loading="lazy" decoding="async"></div>
       <div class="fpost__body">
         <span class="fpost__meta">Planning Notes &middot; 6 min read</span>
         <h3>Why Businesses in Newcastle Are Rethinking Festive Events in 2026</h3>
