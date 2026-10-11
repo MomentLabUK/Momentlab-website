@@ -425,8 +425,9 @@ section p{max-width:66ch}
 .media--tile{aspect-ratio:4/5}
 .photo{position:relative;width:100%;overflow:hidden;background:#141414}
 .photo--wide{aspect-ratio:16/9}
+.photo--keep{aspect-ratio:3/2}
 .photo img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block}
-@supports not (aspect-ratio:1/1){.photo--wide{height:0;padding-bottom:56.25%}}
+@supports not (aspect-ratio:1/1){.photo--wide{height:0;padding-bottom:56.25%}.photo--keep{height:0;padding-bottom:66.67%}}
 .tile__img{position:relative;aspect-ratio:4/5;overflow:hidden;background:#141414;border-bottom:1px solid var(--hair)}
 .tile__img img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block}
 @supports not (aspect-ratio:1/1){.tile__img{height:0;padding-bottom:125%}}
@@ -650,10 +651,7 @@ section p{max-width:66ch}
       <p>Prints come on premium, smudge-proof paper, the digital and video reach the phone by a quick scan, and the host receives the full gallery in full resolution after the event.</p>
     </div>
     <div class="col-media">
-      <div class="media media--keep">
-        <span class="media__tag">Media</span>
-        <span class="media__label"><strong>Keepsake detail</strong>3:2 &middot; 1500&times;1000 &middot; WebP<br>Festive print in hand</span>
-      </div>
+      <div class="photo photo--keep"><img src="/assets/experiences/holiday-gazette-photo-booth-print-keepsake-newcastle.webp" width="1500" height="1000" alt="A Holiday Gazette front page laid out between printed photo strips, each finished with a festive newspaper masthead" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
