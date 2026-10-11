@@ -423,6 +423,9 @@ section p{max-width:66ch}
 .yt:hover .yt__play{background:rgba(201,168,76,.16)}
 .yt iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
 .media--tile{aspect-ratio:4/5}
+.tile__img{position:relative;aspect-ratio:4/5;overflow:hidden;background:#141414;border-bottom:1px solid var(--hair)}
+.tile__img img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block}
+@supports not (aspect-ratio:1/1){.tile__img{height:0;padding-bottom:125%}}
 .bone-sec{background:var(--bone);color:var(--obsidian)}
 .bone-sec h2{color:var(--obsidian)}
 .bone-sec p{color:rgba(10,10,10,.72)}
@@ -587,27 +590,27 @@ section p{max-width:66ch}
     </div>
     <div class="tiles">
       <div class="tile">
-        <div class="media media--tile"><span class="media__tag">Media</span><span class="media__label"><strong>Naughty &amp; Nice Pass Card</strong>4:5 &middot; 1000&times;1250</span></div>
+        <div class="tile__img"><img src="/assets/experiences/naughty-nice-photo-booth-event-newcastle.webp" width="1000" height="1250" alt="A personalised Nice List pass card with a guest's portrait, held in a clear keepsake case" loading="lazy" decoding="async"></div>
         <div class="tile__body"><h3>Naughty &amp; Nice Pass Card</h3><p>A personalised pass card carrying the guest's own portrait, presented in a keepsake case.</p></div>
       </div>
       <div class="tile">
-        <div class="media media--tile"><span class="media__tag">Media</span><span class="media__label"><strong>The Holiday Gazette</strong>4:5 &middot; 1000&times;1250</span></div>
+        <div class="tile__img"><img src="/assets/experiences/holiday-gazette-photo-booth-event-newcastle.webp" width="1000" height="1250" alt="A Holiday Gazette front page of four friends on the photo booth screen" loading="lazy" decoding="async"></div>
         <div class="tile__body"><h3>The Holiday Gazette</h3><p>Guests become the front-page story of a vintage festive newspaper, printed or shared on the spot.</p></div>
       </div>
       <div class="tile">
-        <div class="media media--tile"><span class="media__tag">Media</span><span class="media__label"><strong>Holiday Constellation</strong>4:5 &middot; 1000&times;1250</span></div>
+        <div class="tile__img"><img src="/assets/experiences/holiday-constellation-photo-booth-event-newcastle.webp" width="1000" height="1250" alt="Three guests holding Holiday Constellation prints, each with their own starscape and northern lights" loading="lazy" decoding="async"></div>
         <div class="tile__body"><h3>Holiday Constellation</h3><p>A walk through light. Guests step into a branded starscape, enter the year they were born and leave with a star map drawn from that year, so no two skies are alike.</p></div>
       </div>
       <div class="tile">
-        <div class="media media--tile"><span class="media__tag">Media</span><span class="media__label"><strong>Holiday Bauble</strong>4:5 &middot; 1000&times;1250</span></div>
+        <div class="tile__img"><img src="/assets/experiences/holiday-bauble-photo-booth-event-newcastle.webp" width="1000" height="1250" alt="A guest holding a clear Christmas bauble with her portrait inside" loading="lazy" decoding="async"></div>
         <div class="tile__body"><h3>Holiday Bauble</h3><p>The guest's portrait set inside a Christmas bauble, ready to hang on the tree at home.</p></div>
       </div>
       <div class="tile">
-        <div class="media media--tile"><span class="media__tag">Media</span><span class="media__label"><strong>Nostalgic Holidays</strong>4:5 &middot; 1000&times;1250</span></div>
+        <div class="tile__img"><img src="/assets/experiences/nostalgic-holidays-photo-booth-event-newcastle.webp" width="1000" height="1250" alt="Two guests holding nostalgic holiday portrait prints against a snowy backdrop" loading="lazy" decoding="async"></div>
         <div class="tile__body"><h3>Nostalgic Holidays</h3><p>Captured in real time, then transformed moments later into a classic holiday portrait with all the warmth of the season.</p></div>
       </div>
       <div class="tile">
-        <div class="media media--tile"><span class="media__tag">Media</span><span class="media__label"><strong>New Year's Eve</strong>4:5 &middot; 1000&times;1250</span></div>
+        <div class="tile__img"><img src="/assets/experiences/new-year-eve-photo-booth-event-newcastle.webp" width="1000" height="1250" alt="Two guests in evening dresses laughing together at the photo booth" loading="lazy" decoding="async"></div>
         <div class="tile__body"><h3>New Year's Eve</h3><p>Made for the countdown to midnight, a glamorous experience that marks the turn of the year.</p></div>
       </div>
     </div>
